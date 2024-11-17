@@ -1,5 +1,9 @@
 # USTB-All-In-One
 
+> USTB 在 Github 上的常用开源工具及资料网站统计大全
+
+![](https://img.shields.io/github/license/LYOfficial/USTB-All-In-One)[![Page Views Count](https://badges.toozhao.com/badges/01JCX96FBFMD7TVCK3HX4KF3VX/orange.svg)](https://badges.toozhao.com/stats/01JCX96FBFMD7TVCK3HX4KF3VX)![](https://img.shields.io/github/stars/LYOfficial/USTB-All-In-One)
+
 ## 学校官方网站
 
 | 标题     | 网址                        | 备注                                     |
