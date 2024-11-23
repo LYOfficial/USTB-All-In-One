@@ -26,7 +26,7 @@
 | 试卷模板  | USTBExam        | https://github.com/htharoldht/USTBExam           | htharoldht            | 北京科技大学试卷 LaTeX 模板                                  |
 | 大物实验  | Gewulab         | https://github.com/BarnabyAlexandraBaron/Gewulab | BarnabyAlexandraBaron | 大物实验数字计算脚本                                         |
 | 不许暂停  | USTB-NoStop     | https://github.com/LYOfficial/USTB-NoStop        | LYOfficial            | USTB 某视频播放网站反复弹窗导致视频播放异常的解决方案        |
-|           |                 |                                                  |                       |                                                              |
+| 测验脚本  | USTB-OES-JS     | https://github.com/isHarryh/USTB-OES-JS          | Harry Huang           | 锐格平台和中国大学 MOOC 参考答案辅助脚本                            |
 |           |                 |                                                  |                       |                                                              |
 |           |                 |                                                  |                       |                                                              |
 |           |                 |                                                  |                       |                                                              |
@@ -47,4 +47,3 @@
 |          |                       |                                                    |            |                                                              |
 |          |                       |                                                    |            |                                                              |
 |          |                       |                                                    |            |                                                              |
-
