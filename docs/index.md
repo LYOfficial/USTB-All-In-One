@@ -41,7 +41,7 @@
 | 论文模板 | USTBThesis            | https://github.com/Jeff-Hugh/USTBThesis            | Jeff-Hugh  | 北京科技大学硕士（博士）毕业设计论文Tex模板                  |
 | 课程资料 | USTB-Course-materials | https://github.com/Orochisun/USTB-Course-materials | Orochi     | 北科课程资料，保及格                                         |
 | 信号实验 | USTB-Signals-Lab      | https://github.com/LYOfficial/USTB-Signals-Lab     | LYOfficial | USTB 自动化学院《信号与系统分析实验》指导与理论图像Python模拟 |
-|          |                       |                                                    |            |                                                              |
+| 数字逻辑 | USTB_DigitalLogic_2024| https://github.com/episvr/USTB_DigitalLogic_2024   | episvr     | 北京科技大学数字逻辑2024年秋 的作业及实验代码               |
 |          |                       |                                                    |            |                                                              |
 |          |                       |                                                    |            |                                                              |
 |          |                       |                                                    |            |                                                              |
