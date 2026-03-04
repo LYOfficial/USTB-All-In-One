@@ -1,0 +1,31 @@
+{
+  "name": "ustb-all-in-one",
+  "version": "1.0.0",
+  "description": "> USTB 在 Github 上的常用开源工具及资料网站统计大全",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LYOfficial/USTB-All-In-One.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/LYOfficial/USTB-All-In-One/issues"
+  },
+  "homepage": "https://github.com/LYOfficial/USTB-All-In-One#readme",
+  "devDependencies": {
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.29"
+  }
+}
