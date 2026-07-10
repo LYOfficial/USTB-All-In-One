@@ -1,0 +1,159 @@
+/* USTB All-In-One — 应用市场卡片样式 */
+
+:root {
+  --app-card-bg: #ffffff;
+  --app-card-border: #e5e7eb;
+  --app-card-hover: #f9fafb;
+  --app-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --app-card-radius: 8px;
+  --app-icon-size: 40px;
+}
+
+.dark {
+  --app-card-bg: #1b1b1f;
+  --app-card-border: #2e2e32;
+  --app-card-hover: #242429;
+  --app-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* 区域块 */
+.ustb-section {
+  margin: 2rem 0 2.5rem;
+}
+
+.ustb-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ustb-section-subtitle {
+  font-size: 0.875rem;
+  color: var(--vp-c-text-3);
+  margin-left: 0.5rem;
+  font-weight: 400;
+}
+
+/* 网格：默认 5 列，响应式 */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 1280px) {
+  .app-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 960px) {
+  .app-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .app-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 单卡片 */
+.app-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--app-card-bg);
+  border: 1px solid var(--app-card-border);
+  border-radius: var(--app-card-radius);
+  box-shadow: var(--app-card-shadow);
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: background-color 0.15s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+  min-width: 0;
+}
+
+.app-card:hover {
+  background: var(--app-card-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.app-card-icon {
+  flex-shrink: 0;
+  width: var(--app-icon-size);
+  height: var(--app-icon-size);
+  border-radius: 8px;
+  background: linear-gradient(135deg, #5b8def 0%, #3b6fd8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.app-card-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.app-card-icon-fallback {
+  text-transform: uppercase;
+}
+
+.app-card-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.app-card-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.app-card-desc {
+  font-size: 0.75rem;
+  color: var(--vp-c-text-3);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.4;
+  word-break: break-all;
+}
+
+/* 紧凑网格（小卡片） */
+.app-grid--compact .app-card {
+  padding: 10px 12px;
+  gap: 8px;
+}
+
+.app-grid--compact .app-card-icon {
+  width: 32px;
+  height: 32px;
+  font-size: 13px;
+  border-radius: 6px;
+}
+
+.app-grid--compact .app-card-title {
+  font-size: 0.8125rem;
+}
