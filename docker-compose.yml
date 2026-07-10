@@ -1,0 +1,51 @@
+# =============================================================================
+# USTB-All-In-One Docker Compose
+# 北京科技大学开源项目及资料导航站 · 一键部署
+# =============================================================================
+
+services:
+  ustb-site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: lyofficial/ustb-all-in-one:latest
+    container_name: ustb-all-in-one
+    restart: unless-stopped
+    ports:
+      # Host port 2000 matches the existing `npm start` script
+      - "${USTB_PORT:-2000}:80"
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    # CNAME lives next to the docs; mounting it lets the deploy host serve the
+    # right GitHub Pages-style domain without rebuilding the image.
+    volumes:
+      - ./docs/CNAME:/usr/share/nginx/html/CNAME:ro
+    # Resource caps keep the static site well within the free tier on most hosts
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 256M
+        reservations:
+          cpus: "0.10"
+          memory: 32M
+
+# -----------------------------------------------------------------------------
+# Optional reverse-proxy sidecar (Traefik). Uncomment the labels block and the
+# `networks` section below if you have Traefik running on the `web` network.
+# -----------------------------------------------------------------------------
+#     labels:
+#       - "traefik.enable=true"
+#       - "traefik.http.routers.ustb.rule=Host(`one.ustb.world`)"
+#       - "traefik.http.routers.ustb.entrypoints=websecure"
+#       - "traefik.http.routers.ustb.tls.certresolver=letsencrypt"
+#       - "traefik.http.services.ustb.loadbalancer.server.port=80"
+#     networks:
+#       - web
+# networks:
+#   web:
+#     external: true
