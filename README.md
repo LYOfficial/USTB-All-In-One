@@ -117,7 +117,8 @@ USTB-All-In-One/
 ### 🖼️ 图标解析优先级
 
 1. `icon` prop（手动指定）→ 例如 `icon="/img/edaee93f024d164ba6c29fe77ba1463b.png"`
-2. 首字母 fallback（浅灰渐变方块）
+2. 远程 favicon（自动从 `url` 提取 host，调用 [`favicon.im`](https://favicon.im/zh) 获取）→ 例如 `https://favicon.im/www.ustb.edu.cn`
+3. 首字母 fallback（浅灰渐变方块）
 
 ### ➕ 如何新增/替换图标
 
