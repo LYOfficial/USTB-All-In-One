@@ -1,27 +1,31 @@
-/* USTB All-In-One — 应用市场卡片样式 */
+/* USTB All-In-One — 站点卡片组件样式 */
 
 :root {
-  --app-card-bg: #ffffff;
-  --app-card-border: #e5e7eb;
-  --app-card-hover: #f9fafb;
-  --app-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --app-card-radius: 8px;
-  --app-icon-size: 40px;
+  --site-card-bg: #ffffff;
+  --site-card-border: #e5e7eb;
+  --site-card-hover: #f9fafb;
+  --site-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --site-card-radius: 8px;
+  --site-icon-size: 40px;
+  --site-badge-bg: #fef3c7;
+  --site-badge-color: #92400e;
 }
 
 .dark {
-  --app-card-bg: #1b1b1f;
-  --app-card-border: #2e2e32;
-  --app-card-hover: #242429;
-  --app-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --site-card-bg: #1b1b1f;
+  --site-card-border: #2e2e32;
+  --site-card-hover: #242429;
+  --site-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --site-badge-bg: #422006;
+  --site-badge-color: #fbbf24;
 }
 
 /* 区域块 */
-.ustb-section {
+.site-section {
   margin: 2rem 0 2.5rem;
 }
 
-.ustb-section-title {
+.site-section-title {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -30,7 +34,7 @@
   gap: 0.5rem;
 }
 
-.ustb-section-subtitle {
+.site-section-subtitle {
   font-size: 0.875rem;
   color: var(--vp-c-text-3);
   margin-left: 0.5rem;
@@ -38,40 +42,41 @@
 }
 
 /* 网格：默认 5 列，响应式 */
-.app-grid {
+.site-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
 
 @media (max-width: 1280px) {
-  .app-grid {
+  .site-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 960px) {
-  .app-grid {
+  .site-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 640px) {
-  .app-grid {
+  .site-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 /* 单卡片 */
-.app-card {
+.site-card {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 14px 16px;
-  background: var(--app-card-bg);
-  border: 1px solid var(--app-card-border);
-  border-radius: var(--app-card-radius);
-  box-shadow: var(--app-card-shadow);
+  background: var(--site-card-bg);
+  border: 1px solid var(--site-card-border);
+  border-radius: var(--site-card-radius);
+  box-shadow: var(--site-card-shadow);
   text-decoration: none !important;
   color: inherit !important;
   transition: background-color 0.15s ease, transform 0.15s ease,
@@ -79,16 +84,16 @@
   min-width: 0;
 }
 
-.app-card:hover {
-  background: var(--app-card-hover);
+.site-card:hover {
+  background: var(--site-card-hover);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.app-card-icon {
+.site-card-icon {
   flex-shrink: 0;
-  width: var(--app-icon-size);
-  height: var(--app-icon-size);
+  width: var(--site-icon-size);
+  height: var(--site-icon-size);
   border-radius: 8px;
   background: linear-gradient(135deg, #5b8def 0%, #3b6fd8 100%);
   display: flex;
@@ -98,21 +103,20 @@
   font-weight: 600;
   font-size: 16px;
   overflow: hidden;
-  position: relative;
 }
 
-.app-card-icon img {
+.site-card-icon img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.app-card-icon-fallback {
+.site-card-icon-fallback {
   text-transform: uppercase;
 }
 
-.app-card-body {
+.site-card-body {
   flex: 1;
   min-width: 0;
   display: flex;
@@ -120,7 +124,7 @@
   gap: 2px;
 }
 
-.app-card-title {
+.site-card-title {
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--vp-c-text-1);
@@ -129,7 +133,7 @@
   white-space: nowrap;
 }
 
-.app-card-desc {
+.site-card-desc {
   font-size: 0.75rem;
   color: var(--vp-c-text-3);
   overflow: hidden;
@@ -141,19 +145,32 @@
   word-break: break-all;
 }
 
-/* 紧凑网格（小卡片） */
-.app-grid--compact .app-card {
+.site-card-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 0.625rem;
+  padding: 1px 6px;
+  background: var(--site-badge-bg);
+  color: var(--site-badge-color);
+  border-radius: 4px;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+/* 紧凑模式：小卡片（无 desc） */
+.site-grid--compact .site-card {
   padding: 10px 12px;
   gap: 8px;
 }
 
-.app-grid--compact .app-card-icon {
+.site-grid--compact .site-card-icon {
   width: 32px;
   height: 32px;
   font-size: 13px;
   border-radius: 6px;
 }
 
-.app-grid--compact .app-card-title {
+.site-grid--compact .site-card-title {
   font-size: 0.8125rem;
 }
