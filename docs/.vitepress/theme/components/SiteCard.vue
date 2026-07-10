@@ -5,7 +5,7 @@ const props = defineProps({
   title: { type: String, required: true },
   url: { type: String, required: true },
   desc: { type: String, default: '' },
-  // 图标本地路径（/img/<file>），留空则使用首字母 fallback
+  // 图标本地路径（/img/<file>），留空则根据 url 走 favicon.im 远程 fallback
   icon: { type: String, default: '' },
   // 徽标文字（右上角小标签，如「校内」「推荐」）
   badge: { type: String, default: '' }
@@ -13,7 +13,22 @@ const props = defineProps({
 
 const iconFailed = ref(false)
 
-const iconUrl = computed(() => props.icon)
+// 从 url 提取 host，供 favicon.im 调用
+const remoteHost = computed(() => {
+  try {
+    const u = new URL(props.url)
+    return u.hostname
+  } catch {
+    return ''
+  }
+})
+
+// 显式 icon 优先；否则用 favicon.im/<host>
+const iconUrl = computed(() => {
+  if (props.icon) return props.icon
+  if (remoteHost.value) return `https://favicon.im/${remoteHost.value}`
+  return ''
+})
 
 // Fallback：首字母
 const initial = computed(() => {
