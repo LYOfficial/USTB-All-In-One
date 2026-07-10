@@ -5,7 +5,7 @@
 
 ## 🏫 学校主站与门户
 
-<SiteSection title="学校主站与门户" subtitle="共 10 个" compact>
+<SiteSection subtitle="共 10 个">
   <SiteCard title="学校官网" url="https://www.ustb.edu.cn/" desc="北京科技大学官方网站" />
   <SiteCard title="新闻网" url="https://news.ustb.edu.cn/" desc="校内新闻、通知公告、媒体看北科" />
   <SiteCard title="信息公开" url="http://xxgk.ustb.edu.cn/" desc="学校信息公开网" />
@@ -20,7 +20,7 @@
 
 ## 🛠️ 教学与公共服务
 
-<SiteSection title="教学与公共服务" subtitle="共 40 个">
+<SiteSection subtitle="共 40 个">
   <SiteCard title="教务系统" url="https://jwgl.ustb.edu.cn/" desc="选课、查看课表、查看考试成绩" />
   <SiteCard title="本研一体化教务" url="https://seam.ustb.edu.cn/" desc="新版一体化教务平台" />
   <SiteCard title="教务处" url="https://jwc.ustb.edu.cn/" desc="通知公告、规章制度" />
@@ -65,7 +65,7 @@
 
 ## 🏛️ 学院官网
 
-<SiteSection title="学院官网" subtitle="共 15 个" compact>
+<SiteSection subtitle="共 15 个">
   <SiteCard title="土木与资源工程学院" url="https://civil.ustb.edu.cn/" />
   <SiteCard title="冶金与生态工程学院" url="https://metall.ustb.edu.cn/" />
   <SiteCard title="材料科学与工程学院" url="https://mse.ustb.edu.cn/" />
@@ -85,7 +85,7 @@
 
 ## 🔬 研究院与重点实验室
 
-<SiteSection title="研究院与重点实验室" subtitle="共 7 个" compact>
+<SiteSection subtitle="共 7 个">
   <SiteCard title="新金属材料国家重点实验室" url="http://skl.ustb.edu.cn/" />
   <SiteCard title="绿色低碳钢铁冶金全国重点实验室" url="https://gmc.ustb.edu.cn/" />
   <SiteCard title="新材料技术研究院" url="https://adma.ustb.edu.cn/" />
@@ -97,7 +97,7 @@
 
 ## 👥 学生事务
 
-<SiteSection title="学生事务" subtitle="共 3 个">
+<SiteSection subtitle="共 3 个">
   <SiteCard title="贝壳校园微服务" url="http://jwstu.ustb.edu.cn" desc="校园微服务聚合平台" />
   <SiteCard title="心理素质教育" url="http://xinli.ustb.edu.cn/" desc="心理素质与心理咨询教育中心" />
   <SiteCard title="智慧学工" url="http://stu.ustb.edu.cn" desc="学生日常事务统一管理平台" />
@@ -105,7 +105,7 @@
 
 ## 💼 财务资产
 
-<SiteSection title="财务资产" subtitle="共 3 个">
+<SiteSection subtitle="共 3 个">
   <SiteCard title="财务服务" url="http://fsp.ustb.edu.cn" desc="财务报销、酬金发放、财务查询等服务综合平台" />
   <SiteCard title="财务服务助手" url="http://chat.ustb.edu.cn/page/site/newPc?app=1" desc="财务知识智能问答智能体" />
   <SiteCard title="校园缴费" url="https://xyjf.ustb.edu.cn/#/login?redirect=%2Fdashboard" desc="网上缴纳网费、学宿费等费用的电子支付平台。" />
@@ -113,19 +113,19 @@
 
 ## 🧑‍💼 组织人事
 
-<SiteSection title="组织人事" subtitle="共 1 个">
+<SiteSection subtitle="共 1 个">
   <SiteCard title="论文综合管理" url="https://lwgl.ustb.edu.cn" desc="论文信息管理系统旨在高效管理学术论文的各类信息。系统提供论文录入功能，涵盖标题、作者、摘要、关键词、发表期刊等关键信息，支持批量导入导出，方便快速整理数据。用户可按作者、关键词、发表时间等多维度搜索查询，精准定位所需论文。" />
 </SiteSection>
 
 ## 🏢 行政办公
 
-<SiteSection title="行政办公" subtitle="共 1 个">
+<SiteSection subtitle="共 1 个">
   <SiteCard title="外事服务" url="http://ims.ustb.edu.cn" desc="学校师生出国（境）、海外交流项目等事务服务平台" />
 </SiteSection>
 
 ## 💻 IT 服务
 
-<SiteSection title="IT 服务" subtitle="共 19 个">
+<SiteSection subtitle="共 19 个">
   <SiteCard title="北科大问卷星" url="http://wenjuan.ustb.edu.cn/mobile/qywx/manage.aspx?corpid=wpy2nnDgAAanOeribrtY3ABjnK71RwAA&privacy=1" desc="问卷、报名、签到、考试校级平台" />
   <SiteCard title="北科云盘" url="http://yunpan.ustb.edu.cn" desc="面向师生服务的文档存储和分享管理平台" />
   <SiteCard title="北科云盘客户端" url="https://soft.ustb.edu.cn/product.html?id=362" desc="校园文件存储系统客户端" />
@@ -149,13 +149,13 @@
 
 ## 🤖 AI 与智能服务
 
-<SiteSection title="AI 与智能服务" subtitle="共 1 个">
+<SiteSection subtitle="共 1 个">
   <SiteCard title="DeepSeek-R1" url="http://chat.ustb.edu.cn" desc="北科大DeepSeek-R1大模型" />
 </SiteSection>
 
 ## 🗣️ 学生组织与周边站点
 
-<SiteSection title="学生组织与周边站点" subtitle="共 4 个">
+<SiteSection subtitle="共 4 个">
   <SiteCard title="共青团北科大委员会" url="https://5470.ustb.edu.cn/" desc="校团委官网（5470 即「北科大精神」的口号）" />
   <SiteCard title="校友会" url="https://alumni.ustb.edu.cn/" desc="校友会、母校新闻" />
   <SiteCard title="iBeiKe 爱北科" url="https://user.ibeike.work/" desc="校学生会 iBeiKe 团队的微信小程序、课表系统" />

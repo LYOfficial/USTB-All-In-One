@@ -8,7 +8,7 @@
 
 ## 📄 论文 / LaTeX 模板
 
-<SiteSection title="📄 论文 / LaTeX 模板" subtitle="共 12 个">
+<SiteSection subtitle="共 12 个">
 <SiteCard title="USTBThesis" url="https://github.com/Jeff-Hugh/USTBThesis" desc="北京科技大学硕博毕业设计论文 LaTeX 模板" />
 <SiteCard title="ustb-thesis" url="https://github.com/bosswnx/ustb-thesis" desc="USTB 本科毕业论文 LaTeX 模板" />
 <SiteCard title="ustb-latex-template" url="https://github.com/Ivanbeethoven/ustb-latex-template" desc="北科大硕/博士毕业论文 LaTeX 模板" />
@@ -25,7 +25,7 @@
 
 ## 🎓 综合资料 / 课程合集
 
-<SiteSection title="🎓 综合资料 / 课程合集" subtitle="共 20 个">
+<SiteSection subtitle="共 20 个">
 <SiteCard title="USTB-Course-materials" url="https://github.com/Orochisun/USTB-Course-materials" desc="北科课程资料，保及格" />
 <SiteCard title="USTB-Signals-Lab" url="https://github.com/LYOfficial/USTB-Signals-Lab" desc="信号与系统分析实验 Python 模拟" />
 <SiteCard title="USTB_DigitalLogic_2024" url="https://github.com/episvr/USTB_DigitalLogic_2024" desc="北京科技大学数字逻辑 2024 年秋作业及实验代码" />
@@ -50,7 +50,7 @@
 
 ## 🧮 数学 / 物理
 
-<SiteSection title="🧮 数学 / 物理" subtitle="共 3 个">
+<SiteSection subtitle="共 3 个">
 <SiteCard title="USTB-Physical-Experiments" url="https://github.com/simcrq/USTB-Physical-Experiments" desc="USTB 理科物理实验笔记" />
 <SiteCard title="Gewulab" url="https://github.com/BarnabyAlexandraBaron/Gewulab" desc="大物实验数字计算脚本" />
 <SiteCard title="AQM2014" url="https://github.com/jiyanjiang/AQM2014" desc="USTB 2014 AQM 笔记" />
@@ -58,7 +58,7 @@
 
 ## 💻 计算机 / 软件工程
 
-<SiteSection title="💻 计算机 / 软件工程" subtitle="共 51 个">
+<SiteSection subtitle="共 51 个">
 <SiteCard title="USTB-Data-Structure" url="https://github.com/MontaEllis/USTB-Data-Structure" desc="数据结构" />
 <SiteCard title="Data_Structure_of_USTB" url="https://github.com/Williamrjw/Data_Structure_of_USTB" desc="数据结构课程作业" />
 <SiteCard title="USTB-cpp-programming" url="https://github.com/CakeAL/ustb-cpp-programming" desc="USTB 程序设计实践 I" />
@@ -114,7 +114,7 @@
 
 ## 🤖 人工智能 / 机器学习
 
-<SiteSection title="🤖 人工智能 / 机器学习" subtitle="共 8 个">
+<SiteSection subtitle="共 8 个">
 <SiteCard title="USTB-Artificial-Intelligence-Machine-Learning-Practices" url="https://github.com/tes223/USTB-Artificial-Intelligence-Machine-Learning-Practices" desc="2021 级 AI 与机器学习实践" />
 <SiteCard title="USTB-Machine-Learning" url="https://github.com/WitchElaina/USTB-Machine-Learning" desc="物联网机器学习实验" />
 <SiteCard title="USTB-Pattern-Recognition-AI-Implementation-Practice" url="https://github.com/Harrison-HXLiu/USTB-Pattern-Recognition-AI-Implementation-Practice" desc="模式识别 AI 实践" />
@@ -127,7 +127,7 @@
 
 ## 🦾 机器人 / 智能车 / 自动控制
 
-<SiteSection title="🦾 机器人 / 智能车 / 自动控制" subtitle="共 18 个">
+<SiteSection subtitle="共 18 个">
 <SiteCard title="USTB-Smart-Car-competition" url="https://github.com/AutoMother/USTB-Smart-Car-competition" desc="智能车竞赛相关代码" />
 <SiteCard title="ustb_19th_smartcar" url="https://github.com/ljk4/ustb_19th_smartcar" desc="校内赛 ROS 组" />
 <SiteCard title="ustb_smartcar19th" url="https://github.com/CarllSagan/ustb_smartcar19th" desc="21 届 USTB 智能车参赛作品" />
@@ -150,7 +150,7 @@
 
 ## 🌐 周边项目
 
-<SiteSection title="🌐 周边项目" subtitle="共 15 个">
+<SiteSection subtitle="共 15 个">
 <SiteCard title="USTB-Dude" url="https://github.com/dashjay/USTB-Dude" desc="What's up dude?" />
 <SiteCard title="memora" url="https://github.com/USTB-806/memora" desc="USTB 806 实验室项目" />
 <SiteCard title="Source-of-USTB" url="https://github.com/Source-of-USTB" desc="学习/项目仓库组" />
