@@ -5,7 +5,10 @@ const props = defineProps({
   title: { type: String, required: true },
   url: { type: String, required: true },
   desc: { type: String, default: '' },
-  icon: { type: String, default: '' }
+  // 可选：覆盖图标 URL（缺省时按 host 自动取 favicon）
+  icon: { type: String, default: '' },
+  // 可选：徽标文字（如「校内」「推荐」），位于卡片右上角
+  badge: { type: String, default: '' }
 })
 
 const iconFailed = ref(false)
@@ -44,8 +47,8 @@ const iconUrl = computed(() => iconCandidates.value[0] || '')
 </script>
 
 <template>
-  <a class="app-card" :href="url" target="_blank" rel="noopener noreferrer">
-    <div class="app-card-icon">
+  <a class="site-card" :href="url" target="_blank" rel="noopener noreferrer">
+    <div class="site-card-icon">
       <img
         v-if="iconUrl && !iconFailed"
         :src="iconUrl"
@@ -53,11 +56,12 @@ const iconUrl = computed(() => iconCandidates.value[0] || '')
         loading="lazy"
         @error="onIconError"
       />
-      <span v-else class="app-card-icon-fallback">{{ initial }}</span>
+      <span v-else class="site-card-icon-fallback">{{ initial }}</span>
     </div>
-    <div class="app-card-body">
-      <div class="app-card-title">{{ title }}</div>
-      <div class="app-card-desc" v-if="desc">{{ desc }}</div>
+    <div class="site-card-body">
+      <div class="site-card-title">{{ title }}</div>
+      <div v-if="desc" class="site-card-desc">{{ desc }}</div>
     </div>
+    <span v-if="badge" class="site-card-badge">{{ badge }}</span>
   </a>
 </template>

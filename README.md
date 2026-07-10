@@ -5,105 +5,179 @@
 [![MIT License](https://img.shields.io/github/license/LYOfficial/USTB-All-In-One)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/LYOfficial/USTB-All-In-One)](https://github.com/LYOfficial/USTB-All-In-One/stargazers)
 
+欢迎来到 **USTB-All-In-One**！这里集中整理了北京科技大学校友们开源的 **GitHub 实用工具**、**校园服务脚本**、**学习资料** 以及 **校内外常用站点**。
 
-欢迎来到 **USTB-All-In-One**！这里收集并整理了大量由北京科技大学优秀的学长学姐们开源的 GitHub 实用工具、校园服务自动脚本、以及各专业的学习资料。
+本项目是基于 [VitePress](https://vitepress.dev/) 搭建的静态导航站，所有数据都是纯文本 Markdown，零门槛即可参与贡献！
 
-本项目现已全面升级为现代化的**导航站**，让你能够以最快的速度、更直观的方式找到你需要的内容！
+🎉 **[点击这里访问导航站](https://one.ustb.world/)** 🎉
 
-🎉 **[点击这里访问全新导航站](https://one.ustb.world/)** 🎉
+---
+
+## 📑 目录速览
+
+| 页面 | 路径 | 收录内容 |
+| --- | --- | --- |
+| 🏫 [学校官方网站](docs/official.md) | `/official` | 教务 / 图书馆 / 网络教学 / 学院 / 实验室 / 学生事务 / IT / AI 等官方服务 |
+| 🛠️ [开源工具](docs/tools.md) | `/tools` | 抢课、校园网、平安报、AI 等校友开源 GitHub 项目 |
+| 📚 [学习资料](docs/materials.md) | `/materials` | 课程合集、LaTeX 模板、复习宝典、实验报告等 |
 
 ---
 
 ## 🌟 为什么需要这个项目？
 
-你科建校以来人才辈出，许多善于探索与编程的校友们留下了大量的虚拟宝藏。为了防止这些宝藏在浩瀚的互联网中沉寂，我们创建了这个项目，将其集中归类，方便所有的北科学子们**采撷使用**、**前人栽树后人乘凉**！
-
-## 🛠️ 项目技术栈
-
-本项目近期进行了重要重构，从之前的单文件静态页面，升级为了基于 [Node.js](https://nodejs.org/) 与 [VitePress](https://vitepress.dev/) 驱动的现代化文档导航站：
-- **VitePress**: 提供极速响应的页面路由和优雅的左侧分类边栏结构。
-- **Markdown**: 数据内容纯文本化维护，让任何人都能零门槛参与贡献！
+USTB 自建校以来人才辈出，许多校友留下了大量宝藏项目。但它们散落在 GitHub 的各个角落难以检索。
+**USTB-All-In-One** 把它们集中归类、统一展示，方便所有北科学子**采撷使用**、**前人栽树后人乘凉**！
 
 ---
 
-## 🤝 参与贡献 (We Need You!)
+## 🤝 参与贡献（We Need You!）
 
-你发现了更好用的工具？你自己写了超酷的抢课/签到脚本？又或者你整理了一份期末复习宝典？
-**千万不要藏着掖着，快把它加入到这个仓库里吧！**
+发现了好用的工具 / 资料？写了一键脚本？整理了期末复习宝典？**通通欢迎提交 PR！**
 
-我们非常极其以及特别欢迎各位校友提交 Pull Request (PR)。无需复杂的本地环境，只需要几步即可完成贡献：
+> 整个仓库的数据层**只有 3 个 Markdown 文件**，对应 3 个导航页面，没有任何数据库。
 
-### 贡献指南
+### 🗂️ 仓库结构
 
-1. **右上角 Fork 本仓库**：[点击这里 Fork](https://github.com/LYOfficial/USTB-All-In-One/fork)。
-2. **修改数据源文件**：
-   - 官方网址补充：编辑 `docs/official.md`
-   - 开源工具补充：编辑 `docs/tools.md`
-   - 学习资料补充：编辑 `docs/materials.md`
-3. **提交 Pull Request (PR)**：
-   - 在你的仓库中点击 `Pull requests` -> `New pull request`。
-   - 目标分支一般为 `dev` 或 `main`，简要描述你添加的项目。
-   - 等待维护者审核合并，你就会成为本项目的贡献者！
+```
+USTB-All-In-One/
+├── docs/                         # 📦 VitePress 站点根目录
+│   ├── index.md                  # 首页（首页不需要改）
+│   ├── official.md               # 🏫 学校官方网站（按章节维护 SiteCard）
+│   ├── tools.md                  # 🛠️ 开源工具（GitHub 项目）
+│   ├── materials.md              # 📚 学习资料（GitHub 项目）
+│   ├── CNAME                     # GitHub Pages 域名
+│   └── .vitepress/
+│       ├── config.mjs            # VitePress 站点配置（导航 / 侧边栏）
+│       └── theme/                # 🎨 自定义主题
+│           ├── index.js          # 主题入口（注册全局组件）
+│           ├── style.css         # 卡片样式
+│           └── components/
+│               ├── SiteCard.vue  # 站点卡片（图标 + 标题 + 简介）
+│               ├── SiteGrid.vue  # 卡片网格容器（响应式 5/4/3/2 列）
+│               └── SiteSection.vue  # 章节块（标题 + 副标题 + 网格）
+├── Dockerfile                    # 多阶段 Docker 构建（node:20-alpine → nginx:1.27-alpine）
+├── docker-compose.yml            # docker compose 配置（含 healthcheck / 资源限制）
+├── docker/
+│   └── nginx.conf                # nginx 配置（SPA fallback / gzip / 不可变缓存）
+├── package.json                  # npm scripts（dev / build / preview）
+└── README.md
+```
 
-> **⚠️ 注意**：提交 PR 前，请确保你 Fork 的仓库已是最新版本（点击自己仓库的 `Sync fork` 按钮即可同步）。
+### ✏️ 三步贡献指南
 
-### 本地开发与预览
+#### 1. Fork 仓库
 
-如果你希望在本地预览或对主题进行深度修改：
+点击仓库右上角 **Fork** 按钮：[Fork USTB-All-In-One](https://github.com/LYOfficial/USTB-All-In-One/fork)。
+
+#### 2. 编辑数据文件
+
+根据你要添加的内容，打开对应的 Markdown 文件，新增一段 `SiteCard`：
+
+| 想添加什么 | 编辑哪个文件 | 插入位置 |
+| --- | --- | --- |
+| 新的官方站点 | `docs/official.md` | 对应章节的 `<SiteSection>…</SiteSection>` 块内 |
+| 新的开源工具 | `docs/tools.md` | 对应章节的 `<SiteSection>…</SiteSection>` 块内 |
+| 新的学习资料 | `docs/materials.md` | 对应章节的 `<SiteSection>…</SiteSection>` 块内 |
+
+如果你想新增一个**全新章节**，在对应 Markdown 文件中按下面的模板新增一段即可（不需要改任何 Vue 组件或 CSS）：
+
+```markdown
+## 🌟 新章节标题
+
+<SiteSection title="🌟 新章节标题" subtitle="共 N 个">
+<SiteCard title="项目名" url="https://github.com/xxx/yyy" desc="一句话简介" />
+</SiteSection>
+```
+
+#### 3. 提交 Pull Request
+
+在你的仓库中点击 **Pull requests → New pull request**，目标分支一般为 `dev` 或 `main`。
+
+> ⚠️ **提交 PR 前**，请确保你的 Fork 已是最新版本（点击自己仓库的 `Sync fork` 按钮同步）。
+
+---
+
+## 🧩 `<SiteCard>` 组件用法速查
+
+```vue
+<SiteCard
+  title="项目标题"        <!-- 必填：卡片主标题 -->
+  url="https://..."        <!-- 必填：点击跳转的链接（图标也会按 host 自动取 favicon） -->
+  desc="一句话简介"        <!-- 可选：单行说明，无 desc 时卡片为紧凑布局 -->
+  badge="推荐"             <!-- 可选：右上角小徽标（仅官方页面用得到） -->
+/>
+```
+
+**图标规则**：组件会按顺序尝试 `https://<host>/favicon.ico` 和 `favicon.png`，加载失败时自动回退为首字母渐变方块，所以**完全不需要手动上传图标**。
+
+---
+
+## 💻 本地开发与预览
+
 ```bash
-# 1. 克隆代码到本地
+# 1. 克隆代码
 git clone https://github.com/LYOfficial/USTB-All-In-One.git
 cd USTB-All-In-One
 
 # 2. 安装依赖
 npm install
 
-# 3. 启动本地开发服务器
+# 3. 启动本地开发服务器（默认 http://localhost:5173）
 npm run docs:dev
 
-# 4. 构建生产环境
+# 4. 构建生产产物到 docs/.vitepress/dist/
 npm run docs:build
+
+# 5. 本地预览构建产物（默认 http://localhost:2000）
+npm run start
 ```
 
-### 🐳 Docker 一键部署
+**主题开发**：自定义主题源码全部在 `docs/.vitepress/theme/` 下，包含 3 个 Vue 组件和 1 个 CSS 文件。VitePress 的扩展点参见[官方文档](https://vitepress.dev/guide/custom-theme)。
 
-项目已经过容器化封装，无需在本地安装 Node.js 即可一键部署：
+---
+
+## 🐳 Docker 一键部署
+
+无需在本地安装 Node.js：
 
 ```bash
-# 1. 拉取镜像并启动容器（默认监听 2000 端口）
+# 1. 启动容器（默认监听宿主 2000 端口）
 docker compose up -d
 
-# 2. 自定义宿主机端口（可选）
+# 2. 自定义宿主机端口
 USTB_PORT=8080 docker compose up -d
 
-# 3. 查看运行状态
+# 3. 查看状态 / 日志
 docker compose ps
-
-# 4. 查看日志
 docker compose logs -f ustb-site
 
-# 5. 停止并移除容器
+# 4. 停止
 docker compose down
 ```
 
-也可以直接使用 `docker build` + `docker run`，跳过 `docker compose`：
+或直接 `docker build` + `docker run`：
+
 ```bash
-# 构建镜像
 docker build -t ustb-all-in-one .
-
-# 运行容器（将容器 80 端口映射到宿主机的 2000 端口）
 docker run -d --name ustb-all-in-one -p 2000:80 ustb-all-in-one
-
-# 浏览器访问 http://localhost:2000
 ```
 
-镜像基于 `nginx:1.27-alpine`，构建阶段使用 `node:20-alpine`，最终产物大小仅约 **40 MB**，支持 healthcheck、资源限制与 CNAME 热更新。详细配置见 [Dockerfile](Dockerfile) 与 [docker-compose.yml](docker-compose.yml)。
+镜像基于 `nginx:1.27-alpine`，构建阶段使用 `node:20-alpine`，最终产物仅约 **40 MB**，包含 healthcheck、资源限制与 CNAME 热更新。详见 [Dockerfile](Dockerfile) 与 [docker-compose.yml](docker-compose.yml)。
+
+---
+
+## 🛠️ 技术栈
+
+- **VitePress 1.6**：静态站点生成、Markdown 渲染、Vue 3 组件支持
+- **Vue 3**：自定义卡片组件（`SiteCard` / `SiteGrid` / `SiteSection`）
+- **nginx 1.27**：生产环境部署
+- **Docker**：多阶段镜像构建
 
 ---
 
 ## 🏆 贡献者墙
 
-感谢每一位为本项目搬运砖块、添砖加瓦的校友！
+感谢每一位为本项目添砖加瓦的校友！
 
 [![Contrib](https://contrib.rocks/image?repo=LYOfficial/USTB-All-In-One)](https://github.com/LYOfficial/USTB-All-In-One/graphs/contributors)
 
@@ -111,4 +185,4 @@ docker run -d --name ustb-all-in-one -p 2000:80 ustb-all-in-one
 
 [![Stargazers over time](https://starchart.cc/LYOfficial/USTB-All-In-One.svg?variant=adaptive)](https://starchart.cc/LYOfficial/USTB-All-In-One/stargazers)
 
-> **如果您觉得本项目对你有帮助，请不要吝啬右上角的 “⭐ Star”，你的支持是我们持续整理的动力！**
+> 如果觉得本项目对你有帮助，请不要吝啬右上角的 **⭐ Star**，你的支持是我们持续整理的动力！
