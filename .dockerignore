@@ -1,0 +1,30 @@
+# Build artifacts
+node_modules
+dist
+docs/.vitepress/dist
+docs/.vitepress/cache
+
+# Docker-in-Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# VCS & editor cruft
+.git
+.gitignore
+.github
+.vscode
+.idea
+*.swp
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Env files
+.env
+.env.*

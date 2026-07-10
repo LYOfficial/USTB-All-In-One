@@ -4,13 +4,13 @@
 
 [![MIT License](https://img.shields.io/github/license/LYOfficial/USTB-All-In-One)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/LYOfficial/USTB-All-In-One)](https://github.com/LYOfficial/USTB-All-In-One/stargazers)
-[![Page Views Count](https://badges.toozhao.com/badges/01JCX96FBFMD7TVCK3HX4KF3VX/orange.svg)](https://badges.toozhao.com/stats/01JCX96FBFMD7TVCK3HX4KF3VX)
+
 
 欢迎来到 **USTB-All-In-One**！这里收集并整理了大量由北京科技大学优秀的学长学姐们开源的 GitHub 实用工具、校园服务自动脚本、以及各专业的学习资料。
 
 本项目现已全面升级为现代化的**导航站**，让你能够以最快的速度、更直观的方式找到你需要的内容！
 
-🎉 **[点击这里访问全新导航站](https://lyofficial.github.io/USTB-All-In-One/)** 🎉
+🎉 **[点击这里访问全新导航站](https://one.ustb.world/)** 🎉
 
 ---
 
@@ -64,6 +64,40 @@ npm run docs:dev
 # 4. 构建生产环境
 npm run docs:build
 ```
+
+### 🐳 Docker 一键部署
+
+项目已经过容器化封装，无需在本地安装 Node.js 即可一键部署：
+
+```bash
+# 1. 拉取镜像并启动容器（默认监听 2000 端口）
+docker compose up -d
+
+# 2. 自定义宿主机端口（可选）
+USTB_PORT=8080 docker compose up -d
+
+# 3. 查看运行状态
+docker compose ps
+
+# 4. 查看日志
+docker compose logs -f ustb-site
+
+# 5. 停止并移除容器
+docker compose down
+```
+
+也可以直接使用 `docker build` + `docker run`，跳过 `docker compose`：
+```bash
+# 构建镜像
+docker build -t ustb-all-in-one .
+
+# 运行容器（将容器 80 端口映射到宿主机的 2000 端口）
+docker run -d --name ustb-all-in-one -p 2000:80 ustb-all-in-one
+
+# 浏览器访问 http://localhost:2000
+```
+
+镜像基于 `nginx:1.27-alpine`，构建阶段使用 `node:20-alpine`，最终产物大小仅约 **40 MB**，支持 healthcheck、资源限制与 CNAME 热更新。详细配置见 [Dockerfile](Dockerfile) 与 [docker-compose.yml](docker-compose.yml)。
 
 ---
 
