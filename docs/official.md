@@ -1,3 +1,22 @@
+---
+layout: home
+
+hero:
+  name: "探索校园服务"
+  text: "学校官方网站导航"
+  tagline: "教务、图书馆、云盘、学院等官方服务一站式直达"
+  image:
+    src: /icon/original.png
+    alt: USTB All-In-One
+  actions:
+    - theme: brand
+      text: 开源工具
+      link: /tools
+    - theme: alt
+      text: 学习资料
+      link: /materials
+---
+
 # 学校官方网站
 
 这里收集了北京科技大学官方提供的各类基础服务网站、院系官网、研究院与重点实验室，以及学生组织与周边站点。

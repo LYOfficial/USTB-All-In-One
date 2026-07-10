@@ -3,6 +3,9 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "USTB All-In-One",
   description: "USTB 在 Github 上的常用开源工具及资料网站统计大全",
+  head: [
+    ['link', { rel: 'icon', type: 'image/png', href: '/icon/icon.png' }]
+  ],
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
