@@ -1,0 +1,1 @@
+import{_ as r,o as e,c as d,ae as a}from"./chunks/framework.BvHJbMD4.js";const l=JSON.parse('{"title":"学习资料","description":"","frontmatter":{},"headers":[],"relativePath":"materials.md","filePath":"materials.md"}'),h={name:"materials.md"};function o(i,t,n,s,g,u){return e(),d("div",null,[...t[0]||(t[0]=[a("",16)])])}const m=r(h,[["render",o]]);export{l as __pageData,m as default};
