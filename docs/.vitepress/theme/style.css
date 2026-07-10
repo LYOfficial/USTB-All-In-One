@@ -5,8 +5,8 @@
   --site-card-border: #e5e7eb;
   --site-card-hover: #f9fafb;
   --site-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --site-card-radius: 10px;
-  --site-icon-size: 44px;
+  --site-card-radius: 12px;
+  --site-icon-size: 52px;
   --site-badge-bg: #fef3c7;
   --site-badge-color: #92400e;
 }
@@ -29,41 +29,35 @@
   font-size: 0.875rem;
   color: var(--vp-c-text-3);
   font-weight: 400;
-  margin: 0.5rem 0 0.75rem;
+  margin: 0.25rem 0 1rem;
 }
 
-/* 网格：默认 4 列（更宽松的卡片），响应式 */
+/* 网格：默认 3 列（卡片足够宽以容纳标题+描述） */
 .site-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
 }
 
 @media (max-width: 1100px) {
-  .site-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 768px) {
   .site-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 540px) {
   .site-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* 单卡片 */
+/* 单卡片：更宽 padding，更大图标 */
 .site-card {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 16px 18px;
+  gap: 14px;
+  padding: 18px 20px;
   background: var(--site-card-bg);
   border: 1px solid var(--site-card-border);
   border-radius: var(--site-card-radius);
@@ -73,7 +67,7 @@
   transition: background-color 0.15s ease, transform 0.15s ease,
     box-shadow 0.15s ease, border-color 0.15s ease;
   min-width: 0;
-  min-height: 76px;
+  min-height: 88px;
 }
 
 .site-card:hover {
@@ -87,12 +81,12 @@
   border-color: #3f3f46;
 }
 
-/* 图标：白底，给真实 favicon 一个干净的展示区 */
+/* 图标：白底，比之前大 */
 .site-card-icon {
   flex-shrink: 0;
   width: var(--site-icon-size);
   height: var(--site-icon-size);
-  border-radius: 8px;
+  border-radius: 10px;
   background: #ffffff;
   display: flex;
   align-items: center;
@@ -123,7 +117,7 @@
   background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
   color: #6b7280;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 22px;
   text-transform: uppercase;
 }
 
@@ -132,17 +126,20 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
 }
 
 .site-card-title {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--vp-c-text-1);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   line-height: 1.3;
+  /* 允许换行（最多 2 行） */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
 }
 
 .site-card-desc {
@@ -154,7 +151,7 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   line-height: 1.45;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 .site-card-badge {
