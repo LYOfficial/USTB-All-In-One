@@ -1,12 +1,11 @@
 <script setup>
 import { computed, ref } from 'vue'
-import { DEFAULT_ICON_MAP } from '../icons-map.js'
 
 const props = defineProps({
   title: { type: String, required: true },
   url: { type: String, required: true },
   desc: { type: String, default: '' },
-  // 显式覆盖图标 URL（缺省时按 host 自动查映射或 favicon）
+  // 图标本地路径（/img/<file>），留空则使用首字母 fallback
   icon: { type: String, default: '' },
   // 徽标文字（右上角小标签，如「校内」「推荐」）
   badge: { type: String, default: '' }
@@ -14,18 +13,7 @@ const props = defineProps({
 
 const iconFailed = ref(false)
 
-// 主机名
-const host = computed(() => {
-  try { return new URL(props.url).host } catch { return '' }
-})
-
-// 图标 URL 优先级：icon prop > 静态映射 > <host>/favicon.ico > fallback
-const iconUrl = computed(() => {
-  if (props.icon) return props.icon
-  if (host.value && DEFAULT_ICON_MAP[host.value]) return DEFAULT_ICON_MAP[host.value]
-  if (host.value) return `https://${host.value}/favicon.ico`
-  return ''
-})
+const iconUrl = computed(() => props.icon)
 
 // Fallback：首字母
 const initial = computed(() => {
@@ -34,6 +22,14 @@ const initial = computed(() => {
 })
 
 function onIconError() { iconFailed.value = true }
+
+// 本地图标理论上不会失败，但加 naturalWidth 校验以防文件损坏
+function onIconLoad(e) {
+  const img = e.target
+  if (!img || img.naturalWidth === 0 || img.naturalHeight === 0) {
+    iconFailed.value = true
+  }
+}
 </script>
 
 <template>
@@ -45,6 +41,7 @@ function onIconError() { iconFailed.value = true }
         :alt="title"
         loading="lazy"
         @error="onIconError"
+        @load="onIconLoad"
       />
       <span v-else class="site-card-icon-fallback">{{ initial }}</span>
     </div>
