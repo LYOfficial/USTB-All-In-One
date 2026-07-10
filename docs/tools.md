@@ -8,7 +8,7 @@
 
 ## 🌐 通用工具 / 元工具
 
-<SiteSection title="🌐 通用工具 / 元工具" subtitle="共 9 个">
+<SiteSection subtitle="共 9 个">
 <SiteCard title="USTB-All-In-One" url="https://github.com/LYOfficial/USTB-All-In-One" desc="USTB 在 Github 上的常用开源工具及资料网站统计大全" />
 <SiteCard title="HelloUSTB" url="https://github.com/genshen/HelloUSTB" desc="USTB 校园 Android App" />
 <SiteCard title="USTB-SSO" url="https://github.com/isHarryh/USTB-SSO" desc="USTB 单点登录（SSO）身份认证实现库" />
@@ -22,7 +22,7 @@
 
 ## 📚 选课 / 抢课
 
-<SiteSection title="📚 选课 / 抢课" subtitle="共 10 个">
+<SiteSection subtitle="共 10 个">
 <SiteCard title="USTB-Auto-Select" url="https://github.com/ustb-auto/USTB-Auto-Select" desc="辅助教务处选课的开源浏览器插件" />
 <SiteCard title="USTBJwAssistant" url="https://github.com/jacklanda/USTBJwAssistant" desc="USTB Auto Course-selecting Assistant" />
 <SiteCard title="ustb_choose_course_system" url="https://github.com/nladuo/ustb_choose_course_system" desc="选课系统第三方 Win/Linux/Mac/Android/iOS 客户端" badge="OUTDATED" />
@@ -37,7 +37,7 @@
 
 ## 📶 校园网 / 网络
 
-<SiteSection title="📶 校园网 / 网络" subtitle="共 20 个">
+<SiteSection subtitle="共 20 个">
 <SiteCard title="ustb-wifi-tools" url="https://github.com/CakeAL/ustb-wifi-tools" desc="校园网实用工具，查询流量、解绑 MAC" />
 <SiteCard title="Login-USTB-Net" url="https://github.com/login-ustb/Login-USTB-Net" desc="命令行快速登录校园网认证脚本" />
 <SiteCard title="ustb-cli" url="https://github.com/Jason23347/ustb-cli" desc="Linux 校园网工具箱：登录、账户/网费/流量" />
@@ -62,7 +62,7 @@
 
 ## 📝 教务 / 成绩 / 课表
 
-<SiteSection title="📝 教务 / 成绩 / 课表" subtitle="共 14 个">
+<SiteSection subtitle="共 14 个">
 <SiteCard title="USTB-OES-JS" url="https://github.com/isHarryh/USTB-OES-JS" desc="锐格平台和中国大学 MOOC 参考答案辅助脚本" />
 <SiteCard title="USTB-Awesome-JS" url="https://github.com/isHarryh/USTB-Awesome-JS" desc="锐格 / 慕课 / 超星 / 抢课 等线上平台辅助脚本合集（油猴）" />
 <SiteCard title="USTB-QGXF" url="https://github.com/isHarryh/USTB-QGXF" desc="强国先锋系列课程自动代理（国防教育/DXPX）" />
@@ -81,14 +81,14 @@
 
 ## 🎬 在线学习 / 网课
 
-<SiteSection title="🎬 在线学习 / 网课" subtitle="共 2 个">
+<SiteSection subtitle="共 2 个">
 <SiteCard title="USTB-RongYouXueTang-Automation-Script" url="https://github.com/study-233/USTB-RongYouXueTang-Automation-Script" desc="USTB 融优学堂自动刷课脚本" />
 <SiteCard title="USTB-RongYouXueTang-2508-WuYu-River-Automation-script" url="https://github.com/River-ut/USTB-RongYouXueTang-2508-WuYu-River-Automation-script" desc="全自动实现网课代刷" />
 </SiteSection>
 
 ## 🕹️ 趣味 / 游戏 / 杂项
 
-<SiteSection title="🕹️ 趣味 / 游戏 / 杂项" subtitle="共 13 个">
+<SiteSection subtitle="共 13 个">
 <SiteCard title="go-arcade-ustb" url="https://github.com/zeronx798/go-arcade-ustb" desc="北科周边街机游戏地图" />
 <SiteCard title="USTBird" url="https://github.com/iloveOREO/USTBird" desc="扑翼飞行器控制代码" />
 <SiteCard title="USTB-Adventure" url="https://github.com/RoboEva/USTB-Adventure" desc="基于 FunCode 平台的跑酷类游戏" />
@@ -106,7 +106,7 @@
 
 ## 🤖 AI / 机器学习 / 爬虫
 
-<SiteSection title="🤖 AI / 机器学习 / 爬虫" subtitle="共 6 个">
+<SiteSection subtitle="共 6 个">
 <SiteCard title="USTBCrawlers" url="https://github.com/nladuo/USTBCrawlers" desc="「那些年，我爬过的北科」定向爬虫教程" />
 <SiteCard title="Predictive-and-Adaptive-Deep-Coding-for-Wireless-Image-Transmission-in-Semantic-Communication" url="https://github.com/wyzhang-ustb/Predictive-and-Adaptive-Deep-Coding-for-Wireless-Image-Transmission-in-Semantic-Communication" desc="IEEE TWC 论文 Pytorch 代码" />
 <SiteCard title="AI-GROWING-USTB-305LAB" url="https://github.com/2JONAS/AI-GROWING-USTB-305LAB" desc="AI 305 实验室成长记录" />
@@ -117,7 +117,7 @@
 
 ## 🛠️ 系统 / 编译器 / 体系结构
 
-<SiteSection title="🛠️ 系统 / 编译器 / 体系结构" subtitle="共 7 个">
+<SiteSection subtitle="共 7 个">
 <SiteCard title="MimiC" url="https://github.com/ustb-owl/MimiC" desc="SysY 编译器（USTB NSCSCC 队）" />
 <SiteCard title="Uranus" url="https://github.com/ustb-owl/Uranus" desc="MIPS 处理器（MaxXing & USTB NSCSCC）" />
 <SiteCard title="TinyMIPS" url="https://github.com/ustb-owl/TinyMIPS" desc="从零搭建完整计算机系统的本科教学项目" />
@@ -129,7 +129,7 @@
 
 ## 📜 LaTeX 模板（亦见学习资料）
 
-<SiteSection title="📜 LaTeX 模板（亦见学习资料）" subtitle="共 12 个">
+<SiteSection subtitle="共 12 个">
 <SiteCard title="USTBExam" url="https://github.com/htharoldht/USTBExam" desc="北京科技大学试卷 LaTeX 模板" />
 <SiteCard title="USTBReport" url="https://github.com/htharoldht/USTBReport" desc="USTB 报告主题" />
 <SiteCard title="USTBBook" url="https://github.com/htharoldht/USTBBook" desc="USTB LaTeX 书籍模板" />
@@ -146,7 +146,7 @@
 
 ## 📦 其他小工具
 
-<SiteSection title="📦 其他小工具" subtitle="共 17 个">
+<SiteSection subtitle="共 17 个">
 <SiteCard title="Gewulab" url="https://github.com/BarnabyAlexandraBaron/Gewulab" desc="大物实验数字计算脚本" />
 <SiteCard title="USTB-Signals-Lab" url="https://github.com/LYOfficial/USTB-Signals-Lab" desc="信号与系统分析实验 Python 模拟" />
 <SiteCard title="FunCode-Test-USTB" url="https://github.com/jeasonstudio/FunCode-Test-USTB" desc="2016.7 USTB FunCode Games 编程考核" />

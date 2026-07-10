@@ -50,11 +50,12 @@ USTB-All-In-One/
 │       ├── config.mjs            # VitePress 站点配置（导航 / 侧边栏）
 │       └── theme/                # 🎨 自定义主题
 │           ├── index.js          # 主题入口（注册全局组件）
-│           ├── style.css         # 卡片样式
+│           ├── style.css         # 卡片样式（4/3/2/1 列响应式）
+│           ├── icons-map.js      # 站内系统图标静态映射
 │           └── components/
 │               ├── SiteCard.vue  # 站点卡片（图标 + 标题 + 简介）
-│               ├── SiteGrid.vue  # 卡片网格容器（响应式 5/4/3/2 列）
-│               └── SiteSection.vue  # 章节块（标题 + 副标题 + 网格）
+│               ├── SiteGrid.vue  # 卡片网格容器（响应式）
+│               └── SiteSection.vue  # 章节块（仅副标题，由 markdown ## 提供主标题）
 ├── Dockerfile                    # 多阶段 Docker 构建（node:20-alpine → nginx:1.27-alpine）
 ├── docker-compose.yml            # docker compose 配置（含 healthcheck / 资源限制）
 ├── docker/
@@ -84,10 +85,12 @@ USTB-All-In-One/
 ```markdown
 ## 🌟 新章节标题
 
-<SiteSection title="🌟 新章节标题" subtitle="共 N 个">
+<SiteSection subtitle="共 N 个">
 <SiteCard title="项目名" url="https://github.com/xxx/yyy" desc="一句话简介" />
 </SiteSection>
 ```
+
+> **说明**：`<SiteSection>` 不会重复渲染标题。Markdown 的 `##` 是唯一的章节标题，`subtitle` 仅在标题下方显示一条灰色副文本（如条目数）。
 
 #### 3. 提交 Pull Request
 
@@ -102,13 +105,21 @@ USTB-All-In-One/
 ```vue
 <SiteCard
   title="项目标题"        <!-- 必填：卡片主标题 -->
-  url="https://..."        <!-- 必填：点击跳转的链接（图标也会按 host 自动取 favicon） -->
-  desc="一句话简介"        <!-- 可选：单行说明，无 desc 时卡片为紧凑布局 -->
-  badge="推荐"             <!-- 可选：右上角小徽标（仅官方页面用得到） -->
+  url="https://..."        <!-- 必填：点击跳转的链接 -->
+  desc="一句话简介"        <!-- 可选：单行说明 -->
+  icon="https://..."       <!-- 可选：显式指定图标 URL（最高优先级） -->
+  badge="推荐"             <!-- 可选：右上角小徽标 -->
 />
 ```
 
-**图标规则**：组件会按顺序尝试 `https://<host>/favicon.ico` 和 `favicon.png`，加载失败时自动回退为首字母渐变方块，所以**完全不需要手动上传图标**。
+### 🖼️ 图标解析优先级
+
+1. `icon` prop（手动指定）→
+2. `docs/.vitepress/theme/icons-map.js`（站内系统图标静态映射）→
+3. `https://<host>/favicon.ico`（浏览器原生 favicon）→
+4. 首字母 fallback（浅灰渐变方块）
+
+> USTB 校内系统普遍没有 `/favicon.ico`，需要从 [i.ustb.edu.cn/home/app-list](https://i.ustb.edu.cn/home/app-list) 提取图标 URL 后填入 `icons-map.js`。详见该文件内注释。
 
 ---
 

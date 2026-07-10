@@ -5,8 +5,8 @@
   --site-card-border: #e5e7eb;
   --site-card-hover: #f9fafb;
   --site-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --site-card-radius: 8px;
-  --site-icon-size: 40px;
+  --site-card-radius: 10px;
+  --site-icon-size: 44px;
   --site-badge-bg: #fef3c7;
   --site-badge-color: #92400e;
 }
@@ -22,47 +22,38 @@
 
 /* 区域块 */
 .site-section {
-  margin: 2rem 0 2.5rem;
-}
-
-.site-section-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  margin: 1.5rem 0 2.5rem;
 }
 
 .site-section-subtitle {
   font-size: 0.875rem;
   color: var(--vp-c-text-3);
-  margin-left: 0.5rem;
   font-weight: 400;
+  margin: 0.5rem 0 0.75rem;
 }
 
-/* 网格：默认 5 列，响应式 */
+/* 网格：默认 4 列（更宽松的卡片），响应式 */
 .site-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
 }
 
-@media (max-width: 1280px) {
-  .site-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 960px) {
+@media (max-width: 1100px) {
   .site-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .site-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .site-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -72,7 +63,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 14px 16px;
+  padding: 16px 18px;
   background: var(--site-card-bg);
   border: 1px solid var(--site-card-border);
   border-radius: var(--site-card-radius);
@@ -80,39 +71,59 @@
   text-decoration: none !important;
   color: inherit !important;
   transition: background-color 0.15s ease, transform 0.15s ease,
-    box-shadow 0.15s ease;
+    box-shadow 0.15s ease, border-color 0.15s ease;
   min-width: 0;
+  min-height: 76px;
 }
 
 .site-card:hover {
   background: var(--site-card-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  border-color: #d1d5db;
 }
 
+.dark .site-card:hover {
+  border-color: #3f3f46;
+}
+
+/* 图标：白底，给真实 favicon 一个干净的展示区 */
 .site-card-icon {
   flex-shrink: 0;
   width: var(--site-icon-size);
   height: var(--site-icon-size);
   border-radius: 8px;
-  background: linear-gradient(135deg, #5b8def 0%, #3b6fd8 100%);
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  font-weight: 600;
-  font-size: 16px;
   overflow: hidden;
+  border: 1px solid var(--site-card-border);
+}
+
+.dark .site-card-icon {
+  background: #ffffff;
+  border-color: #e5e7eb;
 }
 
 .site-card-icon img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
+/* Fallback：首字母浅灰底（与真实图标区分） */
 .site-card-icon-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 18px;
   text-transform: uppercase;
 }
 
@@ -121,7 +132,7 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
 }
 
 .site-card-title {
@@ -131,17 +142,18 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  line-height: 1.3;
 }
 
 .site-card-desc {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   color: var(--vp-c-text-3);
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  line-height: 1.4;
+  line-height: 1.45;
   word-break: break-all;
 }
 
@@ -156,21 +168,4 @@
   border-radius: 4px;
   font-weight: 500;
   pointer-events: none;
-}
-
-/* 紧凑模式：小卡片（无 desc） */
-.site-grid--compact .site-card {
-  padding: 10px 12px;
-  gap: 8px;
-}
-
-.site-grid--compact .site-card-icon {
-  width: 32px;
-  height: 32px;
-  font-size: 13px;
-  border-radius: 6px;
-}
-
-.site-grid--compact .site-card-title {
-  font-size: 0.8125rem;
 }
