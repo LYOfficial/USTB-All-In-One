@@ -50,12 +50,14 @@ USTB-All-In-One/
 │       ├── config.mjs            # VitePress 站点配置（导航 / 侧边栏）
 │       └── theme/                # 🎨 自定义主题
 │           ├── index.js          # 主题入口（注册全局组件）
-│           ├── style.css         # 卡片样式（4/3/2/1 列响应式）
-│           ├── icons-map.js      # 站内系统图标静态映射
+│           ├── style.css         # 卡片样式（3/2/1 列响应式）
 │           └── components/
 │               ├── SiteCard.vue  # 站点卡片（图标 + 标题 + 简介）
 │               ├── SiteGrid.vue  # 卡片网格容器（响应式）
 │               └── SiteSection.vue  # 章节块（仅副标题，由 markdown ## 提供主标题）
+└── docs/
+    └── public/
+        └── img/                  # 🖼️ 本地图标素材（由 <SiteCard icon="/img/..."> 引用）
 ├── Dockerfile                    # 多阶段 Docker 构建（node:20-alpine → nginx:1.27-alpine）
 ├── docker-compose.yml            # docker compose 配置（含 healthcheck / 资源限制）
 ├── docker/
@@ -107,19 +109,26 @@ USTB-All-In-One/
   title="项目标题"        <!-- 必填：卡片主标题 -->
   url="https://..."        <!-- 必填：点击跳转的链接 -->
   desc="一句话简介"        <!-- 可选：单行说明 -->
-  icon="https://..."       <!-- 可选：显式指定图标 URL（最高优先级） -->
+  icon="/img/xxx.png"      <!-- 可选：本地图标路径（docs/public/img/ 下的文件） -->
   badge="推荐"             <!-- 可选：右上角小徽标 -->
 />
 ```
 
 ### 🖼️ 图标解析优先级
 
-1. `icon` prop（手动指定）→
-2. `docs/.vitepress/theme/icons-map.js`（站内系统图标静态映射）→
-3. `https://<host>/favicon.ico`（浏览器原生 favicon）→
-4. 首字母 fallback（浅灰渐变方块）
+1. `icon` prop（手动指定）→ 例如 `icon="/img/edaee93f024d164ba6c29fe77ba1463b.png"`
+2. 首字母 fallback（浅灰渐变方块）
 
-> USTB 校内系统普遍没有 `/favicon.ico`，需要从 [i.ustb.edu.cn/home/app-list](https://i.ustb.edu.cn/home/app-list) 提取图标 URL 后填入 `icons-map.js`。详见该文件内注释。
+### ➕ 如何新增/替换图标
+
+1. 把图片放到 `docs/public/img/`（项目根目录的 img/ 在 build 时不会被打包，必须是 docs/public/img/）
+2. 在对应 `<SiteCard>` 上加 `icon="/img/文件名"`，例如：
+
+```markdown
+<SiteCard title="就业服务" url="https://job.ustb.edu.cn/" icon="/img/edaee93f024d164ba6c29fe77ba1463b.png" />
+```
+
+> 图标素材源：北京科技大学融合门户 [i.ustb.edu.cn/home/app-list](https://i.ustb.edu.cn/home/app-list)。
 
 ---
 
