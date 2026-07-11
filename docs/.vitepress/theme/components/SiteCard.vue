@@ -11,9 +11,9 @@ const props = defineProps({
   badge: { type: String, default: '' }
 })
 
-const iconFailed = ref(false)
+// 是否已尝试过主图标（手动 icon 或 favicon.im）。一旦失败，回退到 ustb.png
+const primaryFailed = ref(false)
 
-// 从 url 提取 host，供 favicon.im 调用
 const remoteHost = computed(() => {
   try {
     const u = new URL(props.url)
@@ -23,26 +23,31 @@ const remoteHost = computed(() => {
   }
 })
 
-// 显式 icon 优先；否则用 favicon.im/<host>
-const iconUrl = computed(() => {
+// 主图标 URL：手动 icon > favicon.im > 默认 ustb.png
+const primaryIcon = computed(() => {
   if (props.icon) return props.icon
   if (remoteHost.value) return `https://favicon.im/${remoteHost.value}`
   return ''
 })
 
-// Fallback：首字母
+const iconUrl = computed(() => {
+  return primaryFailed.value || !primaryIcon.value ? '/icon/ustb.png' : primaryIcon.value
+})
+
 const initial = computed(() => {
   const t = (props.title || '').trim()
   return t ? t.charAt(0).toUpperCase() : '?'
 })
 
-function onIconError() { iconFailed.value = true }
+function onIconError() {
+  primaryFailed.value = true
+}
 
-// 本地图标理论上不会失败，但加 naturalWidth 校验以防文件损坏
 function onIconLoad(e) {
   const img = e.target
+  // 文件损坏（naturalWidth=0）也按加载失败处理
   if (!img || img.naturalWidth === 0 || img.naturalHeight === 0) {
-    iconFailed.value = true
+    primaryFailed.value = true
   }
 }
 </script>
@@ -51,14 +56,12 @@ function onIconLoad(e) {
   <a class="site-card" :href="url" target="_blank" rel="noopener noreferrer">
     <div class="site-card-icon">
       <img
-        v-if="iconUrl && !iconFailed"
         :src="iconUrl"
         :alt="title"
         loading="lazy"
         @error="onIconError"
         @load="onIconLoad"
       />
-      <span v-else class="site-card-icon-fallback">{{ initial }}</span>
     </div>
     <div class="site-card-body">
       <div class="site-card-title">{{ title }}</div>
