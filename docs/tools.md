@@ -151,6 +151,7 @@ aside: false
 <SiteCard title="go-arcade-ustb" url="https://github.com/zeronx798/go-arcade-ustb" desc="北科周边街机游戏地图" />
 <SiteCard title="USTB-Adventure" url="https://github.com/RoboEva/USTB-Adventure" desc="基于 FunCode 平台的跑酷类游戏" />
 <SiteCard title="auto-get-ustb-ammeter" url="https://github.com/CakeAL/auto-get-ustb-ammeter" desc="自动获取北科电表电量并整理成 CSV" />
+</SiteSection>
 
 ## AI / 机器学习 / 爬虫 {#tools-ai}
 
