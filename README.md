@@ -15,13 +15,14 @@
 
 ## 📑 目录速览
 
-整个站点只有一个导航页（首页），按 `##` 锚点划分三大分区，右侧 sidebar 始终展示所有小节：
+四个页面（首页 + 三个分区页），三页共享同一套 UI 骨架（顶部跳转条 + 右侧 sidebar 锚点导航 + 同样的 SiteCard/SiteSection 组件）：
 
-| 分区 | 锚点 | 收录内容 |
+| 页面 | 路径 | 收录内容 |
 | --- | --- | --- |
-| 🏫 学校官方网站 | `/#official` | 教务 / 图书馆 / 网络教学 / 学院 / 实验室 / 学生事务 / IT / AI 等官方服务 |
-| 🛠️ 开源工具 | `/#tools` | 抢课、校园网、平安报、AI 等校友开源 GitHub 项目 |
-| 📚 学习资料 | `/#materials` | 课程合集、LaTeX 模板、复习宝典、实验报告等 |
+| 🏠 [首页](docs/index.md) | `/` | Hero + Features 三入口（学校官网 / 开源工具 / 学习资料） |
+| 🏫 [学校官方网站](docs/official.md) | `/official` | 教务 / 图书馆 / 网络教学 / 学院 / 实验室 / 学生事务 / IT / AI 等官方服务 |
+| 🛠️ [开源工具](docs/tools.md) | `/tools` | 抢课、校园网、平安报、AI 等校友开源 GitHub 项目 |
+| 📚 [学习资料](docs/materials.md) | `/materials` | 课程合集、LaTeX 模板、复习宝典、实验报告等 |
 
 ---
 
@@ -36,14 +37,17 @@ USTB 自建校以来人才辈出，许多校友留下了大量宝藏项目。但
 
 发现了好用的工具 / 资料？写了一键脚本？整理了期末复习宝典？**通通欢迎提交 PR！**
 
-> 整个仓库的数据层**只有 1 个 Markdown 文件**（`docs/index.md`），所有分区都在同一页内以锚点分隔，没有任何数据库。
+> 整个仓库的数据层**只有 4 个 Markdown 文件**（首页 1 个 + 三个分区页各 1 个），没有任何数据库。三页使用同一套 UI（顶部跳转条 + 右侧 sidebar 锚点导航 + SiteCard/SiteSection 组件），保持视觉一致。
 
 ### 🗂️ 仓库结构
 
 ```
 USTB-All-In-One/
 ├── docs/                         # 📦 VitePress 站点根目录
-│   ├── index.md                  # 单一导航页：首页（学校官网 / 开源工具 / 学习资料）
+│   ├── index.md                  # 首页（Hero + Features 入口）
+│   ├── official.md               # 🏫 学校官方网站（按章节维护 SiteCard）
+│   ├── tools.md                  # 🛠️ 开源工具（GitHub 项目）
+│   ├── materials.md              # 📚 学习资料（GitHub 项目）
 │   ├── CNAME                     # GitHub Pages 域名
 │   └── .vitepress/
 │       ├── config.mjs            # VitePress 站点配置（导航 / 侧边栏 / logo）
@@ -74,25 +78,25 @@ USTB-All-In-One/
 
 #### 2. 编辑数据文件
 
-所有内容都在 **`docs/index.md`** 一个文件里，按分区用 `##` / `###` 划分子节：
+根据你要添加的内容，打开对应的 Markdown 文件，新增一段 `SiteCard`：
 
 | 想添加什么 | 编辑哪个文件 | 插入位置 |
 | --- | --- | --- |
-| 新的官方站点 | `docs/index.md` | `## 🏫 学校官方网站` 下的对应 `###` 子节 |
-| 新的开源工具 | `docs/index.md` | `## 🛠️ 开源工具` 下的对应 `###` 子节 |
-| 新的学习资料 | `docs/index.md` | `## 📚 学习资料` 下的对应 `###` 子节 |
+| 新的官方站点 | `docs/official.md` | 对应章节的 `<SiteSection>…</SiteSection>` 块内 |
+| 新的开源工具 | `docs/tools.md` | 对应章节的 `<SiteSection>…</SiteSection>` 块内 |
+| 新的学习资料 | `docs/materials.md` | 对应章节的 `<SiteSection>…</SiteSection>` 块内 |
 
-如果你想新增一个**全新章节**，在对应分区下按下面的模板新增一段即可（不需要改任何 Vue 组件或 CSS）：
+三页顶部共享同一套跳转条与右侧 sidebar 锚点导航，UI 完全一致。如果你想新增一个**全新章节**，在对应 Markdown 文件中按下面的模板新增一段即可（不需要改任何 Vue 组件或 CSS）：
 
 ```markdown
-### 🌟 新章节标题 {#分区-anchor}
+## 🌟 新章节标题 {#分区-anchor}
 
 <SiteSection subtitle="共 N 个">
 <SiteCard title="项目名" url="https://github.com/xxx/yyy" desc="一句话简介" />
 </SiteSection>
 ```
 
-> **说明**：`<SiteSection>` 不会重复渲染标题。Markdown 的 `###` 是唯一的章节标题，`subtitle` 仅在标题下方显示一条灰色副文本（如条目数）。`{#分区-anchor}` 给出右侧 sidebar 可跳转的稳定锚点。
+> **说明**：`<SiteSection>` 不会重复渲染标题。Markdown 的 `##` 是唯一的章节标题，`subtitle` 仅在标题下方显示一条灰色副文本（如条目数）。`{#分区-anchor}` 给出右侧 sidebar 可跳转的稳定锚点。
 
 #### 3. 提交 Pull Request
 
