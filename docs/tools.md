@@ -149,29 +149,15 @@ aside: false
 
 <SiteSection subtitle="共 13 个">
 <SiteCard title="go-arcade-ustb" url="https://github.com/zeronx798/go-arcade-ustb" desc="北科周边街机游戏地图" />
-<SiteCard title="USTBird" url="https://github.com/iloveOREO/USTBird" desc="扑翼飞行器控制代码" />
 <SiteCard title="USTB-Adventure" url="https://github.com/RoboEva/USTB-Adventure" desc="基于 FunCode 平台的跑酷类游戏" />
 <SiteCard title="auto-get-ustb-ammeter" url="https://github.com/CakeAL/auto-get-ustb-ammeter" desc="自动获取北科电表电量并整理成 CSV" />
-<SiteCard title="ustb-campus" url="https://github.com/U202142209/ustb-campus" desc="「贝壳校园墙」小程序改编，golang + vue3 实现" />
-<SiteCard title="USTB-Welcome" url="https://github.com/Vincent-Leon/USTB-Welcome" desc="校学生会 iBeiKe 团队新生手册小程序" />
-<SiteCard title="USTB-Lost-and-Found" url="https://github.com/Vincent-Leon/USTB-Lost-and-Found" desc="校学生会 iBeiKe 团队失物招领小程序" />
-<SiteCard title="USTB-Smart-Car-competition" url="https://github.com/AutoMother/USTB-Smart-Car-competition" desc="北科大智能车竞赛相关代码" />
-<SiteCard title="USTBSmartCarRaceTimer_Upper" url="https://github.com/Xiangyuan-Xie/USTBSmartCarRaceTimer_Upper" desc="智能汽车竞赛计时器 PC 端" />
-<SiteCard title="ustb_smartcar19th" url="https://github.com/CarllSagan/ustb_smartcar19th" desc="21 届 USTB 智能车参赛作品" />
-<SiteCard title="ustb_19th_smartcar" url="https://github.com/ljk4/ustb_19th_smartcar" desc="智能车校内赛 ROS 组：Cartographer 建图、YOLOv5 等" />
-<SiteCard title="ustb-16th-ros" url="https://github.com/ChengJB/ustb-16th-ros" desc="第 16 届智能车 ROS" />
-<SiteCard title="USTB_MEI_Camera" url="https://github.com/FKSJDSCZ/USTB_MEI_Camera" desc="ABU ROBOCON 2024 多相机检测系统（YOLO+TensorRT）" />
-</SiteSection>
 
 ## AI / 机器学习 / 爬虫 {#tools-ai}
 
 <SiteSection subtitle="共 6 个">
 <SiteCard title="USTBCrawlers" url="https://github.com/nladuo/USTBCrawlers" desc="「那些年，我爬过的北科」定向爬虫教程" />
-<SiteCard title="Predictive-and-Adaptive-Deep-Coding-for-Wireless-Image-Transmission-in-Semantic-Communication" url="https://github.com/wyzhang-ustb/Predictive-and-Adaptive-Deep-Coding-for-Wireless-Image-Transmission-in-Semantic-Communication" desc="IEEE TWC 论文 Pytorch 代码" />
 <SiteCard title="AI-GROWING-USTB-305LAB" url="https://github.com/2JONAS/AI-GROWING-USTB-305LAB" desc="AI 305 实验室成长记录" />
 <SiteCard title="ustb-ai3d" url="https://github.com/ustb-ai3d" desc="北科大 AI3D 视觉实验室" />
-<SiteCard title="magang" url="https://github.com/ustb-ai3d/magang" desc="马钢钢板表面缺陷检测" />
-<SiteCard title="PointRCNN" url="https://github.com/cxl-ustb/PointRCNN" desc="PaddlePaddle 复现 PointRCNN" />
 </SiteSection>
 
 ## 系统 / 编译器 / 体系结构 {#tools-system}
@@ -221,6 +207,4 @@ aside: false
 <SiteCard title="spack-repos" url="https://github.com/hpcde/spack-repos" desc="Spack repos for HPC&DE, USTB" />
 <SiteCard title="USTB-Term-Assignments" url="https://github.com/isHarryh/USTB-Term-Assignments" desc="USTB 课程大作业合集" />
 <SiteCard title="USTB-EmbeddedSystem-2024" url="https://github.com/exder145/USTB-EmbeddedSystem-2024" desc="24 学年大三上嵌入式实验 (STM32F10x)" />
-<SiteCard title="MSP_432_learning_material" url="https://github.com/USTB-3rd-zckj-techdepartment/MSP_432_learning_material" desc="MSP432P401r 学习资料" />
-<SiteCard title="TMS320F28335_Learning_Notes" url="https://github.com/USTB-3rd-zckj-techdepartment/TMS320F28335_Learning_Notes" desc="TMS320F28335 学习笔记" />
 </SiteSection>
