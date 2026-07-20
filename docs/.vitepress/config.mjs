@@ -96,9 +96,13 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/LYOfficial/USTB-All-In-One' }
     ],
 
+    darkModeSwitchLabel: '外观',
+    lightModeSwitchTitle: '切换到浅色模式',
+    darkModeSwitchTitle: '切换到深色模式',
+
     footer: {
-      message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2026-present USTB Open Source Contributors'
+      message: 'Released under the <a href="https://github.com/LYOfficial/USTB-All-In-One#GPL-3.0-1-ov-file">GPL-3.0 License</a>.',
+      copyright: 'Copyright © 2026 SkyCode'
     }
   }
 })

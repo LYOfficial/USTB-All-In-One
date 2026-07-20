@@ -2,7 +2,7 @@
 
 > **北京科技大学（USTB）开源项目及资料导航站**
 
-[![MIT License](https://img.shields.io/github/license/LYOfficial/USTB-All-In-One)](LICENSE)
+[![GPL-3.0 License](https://img.shields.io/github/license/LYOfficial/USTB-All-In-One)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/LYOfficial/USTB-All-In-One)](https://github.com/LYOfficial/USTB-All-In-One/stargazers)
 
 欢迎来到 **USTB-All-In-One**！这里集中整理了北京科技大学校友们开源的 **GitHub 实用工具**、**校园服务脚本**、**学习资料**、**同好社群** 以及 **校内外常用站点**。

@@ -19,8 +19,8 @@
     "url": "git+https://github.com/LYOfficial/USTB-All-In-One.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "SkyCode",
+  "license": "GPL-3.0-only",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/LYOfficial/USTB-All-In-One/issues"
