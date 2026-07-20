@@ -17,23 +17,8 @@ hero:
       text: 在 GitHub 上查看
       link: https://github.com/LYOfficial/USTB-All-In-One
 
-features:
-  - title: 🏫 学校官方网站
-    details: 教务系统、北科云盘、正版软件、北科记忆等基础服务导航。
-    link: /official
-  - title: 🛠️ 开源工具
-    details: 北科大相关的诸多实用小工具、脚本、测试程序等。
-    link: /tools
-  - title: 📚 学习资料
-    details: 各类课程资料、期末复习宝典、实验报告以及 LaTeX 模板等。
-    link: /materials
-  - title: 👥 同好社群
-    details: 北科同学的游戏、兴趣与交流 QQ 群，一键查看群头像并申请加入。
-    link: /communities
 ---
 
 <style>
 .actions { margin-top: 1.5rem; }
-.VPFeature { cursor: pointer; transition: all 0.25s ease; }
-.VPFeature:hover { transform: translateY(-2px); }
 </style>

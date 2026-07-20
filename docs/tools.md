@@ -4,65 +4,10 @@ aside: false
 ---
 
 <style>
-.page-nav-strip {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 0 0 1.5rem;
-  padding: 14px 16px;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 12px;
-  background: var(--vp-c-bg-soft);
-}
-.page-nav-strip a {
-  flex: 1 1 200px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 14px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--vp-c-text-1);
-  background: var(--vp-c-bg);
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 10px;
-  text-decoration: none !important;
-  transition: transform 0.15s ease, border-color 0.15s ease;
-}
-.page-nav-strip a:hover {
-  transform: translateY(-2px);
-  border-color: var(--vp-c-brand-1);
-  color: var(--vp-c-brand-1);
-}
-.page-nav-strip a.is-active {
-  border-color: var(--vp-c-brand-1);
-  color: var(--vp-c-brand-1);
-  background: var(--vp-c-brand-soft);
-}
 .section-anchor {
   scroll-margin-top: 80px;
 }
-.page-lead {
-  font-size: 1.02rem;
-  color: var(--vp-c-text-2);
-  margin: 0 0 1.5rem;
-}
 </style>
-
-<div class="page-nav-strip">
-  <a href="/official">🏫 学校官方网站</a>
-  <a href="/tools" class="is-active">🛠️ 开源工具</a>
-  <a href="/materials">📚 学习资料</a>
-  <a href="/communities">👥 同好社群</a>
-</div>
-
-<p class="page-lead">
-  收集北科大相关的实用小工具、脚本、测试程序等。仓库名带 <code>USTB</code> / <code>ustb</code> 关键字的校友项目均收录于此。
-</p>
-
-::: tip 💡 使用提示
-点击卡片即可跳转到对应 GitHub 仓库。
-:::
 
 # 🛠️ 开源工具
 

@@ -19,7 +19,7 @@
 
 | 页面 | 路径 | 收录内容 |
 | --- | --- | --- |
-| 🏠 [首页](docs/index.md) | `/` | Hero + Features 四入口（学校官网 / 开源工具 / 学习资料 / 同好社群） |
+| 🏠 [首页](docs/index.md) | `/` | Hero 展示；四个分区入口统一位于顶部菜单栏 |
 | 🏫 [学校官方网站](docs/official.md) | `/official` | 教务 / 图书馆 / 网络教学 / 学院 / 实验室 / 学生事务 / IT / AI 等官方服务 |
 | 🛠️ [开源工具](docs/tools.md) | `/tools` | 抢课、校园网、平安报、AI 等校友开源 GitHub 项目 |
 | 📚 [学习资料](docs/materials.md) | `/materials` | 课程合集、LaTeX 模板、复习宝典、实验报告等 |
@@ -45,7 +45,7 @@ USTB 自建校以来人才辈出，许多校友留下了大量宝藏项目。但
 ```
 USTB-All-In-One/
 ├── docs/                         # 📦 VitePress 站点根目录
-│   ├── index.md                  # 首页（Hero + Features 入口）
+│   ├── index.md                  # 首页（Hero 展示，分区入口位于顶部菜单栏）
 │   ├── official.md               # 🏫 学校官方网站（按章节维护 SiteCard）
 │   ├── tools.md                  # 🛠️ 开源工具（GitHub 项目）
 │   ├── materials.md              # 📚 学习资料（GitHub 项目）

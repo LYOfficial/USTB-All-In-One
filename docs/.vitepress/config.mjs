@@ -70,7 +70,10 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: '导航', link: '/official' },
+      { text: '学校官方网站', link: '/official' },
+      { text: '开源工具', link: '/tools' },
+      { text: '学习资料', link: '/materials' },
+      { text: '同好社群', link: '/communities' },
       { text: 'GitHub', link: 'https://github.com/LYOfficial/USTB-All-In-One' }
     ],
 

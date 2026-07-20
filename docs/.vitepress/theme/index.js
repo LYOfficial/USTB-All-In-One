@@ -1,5 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
+import Layout from './Layout.vue'
 import SiteCard from './components/SiteCard.vue'
 import SiteGrid from './components/SiteGrid.vue'
 import SiteSection from './components/SiteSection.vue'
@@ -7,6 +8,7 @@ import QqGroupCard from './components/QqGroupCard.vue'
 
 export default {
   extends: DefaultTheme,
+  Layout,
   enhanceApp({ app }) {
     app.component('SiteCard', SiteCard)
     app.component('SiteGrid', SiteGrid)

@@ -27,11 +27,6 @@ export default [
     "joinUrl": "https://qm.qq.com/q/ShLinlbVu2"
   },
   {
-    "number": "540069259",
-    "name": "陈、青山绿水、Ꭺ࿆ ␆␡ ␂...",
-    "joinUrl": "https://qm.qq.com/q/RQrqotYEIa"
-  },
-  {
     "number": "482545016",
     "name": "🐚贝壳O.M.V.帝江号会客室",
     "joinUrl": "https://qm.qq.com/q/lw4c4qoODC"
