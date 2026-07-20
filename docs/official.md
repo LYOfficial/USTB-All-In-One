@@ -70,7 +70,7 @@ aside: false
   <SiteCard title="信息公开" url="http://xxgk.ustb.edu.cn/" desc="学校信息公开网" />
   <SiteCard title="校务公开" url="https://www1.ustb.edu.cn/" desc="校务公开综合服务" />
   <SiteCard title="北科记忆" url="https://memory.ustb.edu.cn/" desc="学校历史、人物、大事记" />
-  <SiteCard title="视觉形象 VI" url="https://vi.ustb.edu.cn/" icon="/img/60038" desc="学校视觉形象识别系统" />
+  <SiteCard title="视觉形象 VI" url="https://vi.ustb.edu.cn/" icon="/img/60038.png" desc="学校视觉形象识别系统" />
   <SiteCard title="外网访问" url="https://n.ustb.edu.cn/" icon="/img/020c7cf486002081041015a18bbb1866.png" desc="校外访问校内资源" />
   <SiteCard title="北科元宇宙" url="https://www.ustb.world/" desc="像素北科 · 元宇宙体素工作坊" />
   <SiteCard title="学校英译规范" url="https://info.ustb.edu.cn/docs//2022-03/da1bba2f6f3247bc99ae4a8593e9ec02.pdf" desc="学校校名校誉使用规范（PDF）" />
@@ -80,43 +80,43 @@ aside: false
 
 <SiteSection subtitle="共 37 个">
   <SiteCard title="教务系统" url="https://jwgl.ustb.edu.cn/" icon="/img/NS2022062.png" desc="选课、查看课表、查看考试成绩" />
-  <SiteCard title="本研一体化教务" url="https://seam.ustb.edu.cn/" icon="/img/90" desc="新版一体化教务平台" />
+  <SiteCard title="本研一体化教务" url="https://seam.ustb.edu.cn/" icon="/img/90.png" desc="新版一体化教务平台" />
   <SiteCard title="教务处" url="https://jwc.ustb.edu.cn/" icon="/img/509ae21a42994049d34097039b9930d3.png" desc="通知公告、规章制度" />
   <SiteCard title="研究生院" url="http://gs.ustb.edu.cn/" desc="研究生管理系统" />
   <SiteCard title="研究生招生" url="https://yzxc.ustb.edu.cn/" desc="考研、招生简章" />
-  <SiteCard title="本科招生" url="https://zhaosheng.ustb.edu.cn/" icon="/img/222" desc="高考招生信息" />
+  <SiteCard title="本科招生" url="https://zhaosheng.ustb.edu.cn/" icon="/img/222.png" desc="高考招生信息" />
   <SiteCard title="就业服务平台" url="https://job.ustb.edu.cn/" icon="/img/edaee93f024d164ba6c29fe77ba1463b.png" desc="校园招聘、就业指导" />
-  <SiteCard title="图书馆" url="https://lib.ustb.edu.cn/" icon="/img/191" desc="馆藏目录、电子资源" />
+  <SiteCard title="图书馆" url="https://lib.ustb.edu.cn/" icon="/img/191.png" desc="馆藏目录、电子资源" />
   <SiteCard title="网络教学平台" url="https://elearning.ustb.edu.cn/" desc="在线课程平台" />
   <SiteCard title="教学证明服务" url="http://bkcjd.ustb.edu.cn/" desc="在校生成绩、学历证明开具" />
   <SiteCard title="缴费大厅" url="https://pay.ustb.edu.cn/" desc="学杂费缴纳" />
-  <SiteCard title="正版软件" url="https://soft.ustb.edu.cn/" icon="/img/117" desc="学校正版软件下载" />
+  <SiteCard title="正版软件" url="https://soft.ustb.edu.cn/" icon="/img/117.png" desc="学校正版软件下载" />
   <SiteCard title="信息办" url="https://info.ustb.edu.cn/" desc="信息化建设与管理办公室" />
-  <SiteCard title="网络教学" url="https://byyt.ustb.edu.cn/" icon="/img/60041" desc="贝壳学堂" />
+  <SiteCard title="网络教学" url="https://byyt.ustb.edu.cn/" icon="/img/60041.png" desc="贝壳学堂" />
   <SiteCard title="校园卡服务" url="https://info.ustb.edu.cn/xxfw/xykfw/" desc="校园卡充值、挂失、电子校园卡" />
   <SiteCard title="OA 站点" url="http://oacheck.ustb.edu.cn/" desc="需经 VPN 访问" />
   <SiteCard title="体育部" url="https://tyb.ustb.edu.cn/" icon="/img/8eb768ea1a31d1b3dcec6d2293a44ced.png" desc="体育场馆、体测" />
   <SiteCard title="办事大厅" url="http://e.ustb.edu.cn" icon="/img/XT2017008.png" desc="一站式网上办事服务平台" />
   <SiteCard title="安全教育平台" url="https://bkdaqjy.ustb.edu.cn" />
-  <SiteCard title="北科期刊中心" url="https://qkzx.ustb.edu.cn/qkdh/index.htm" icon="/img/194" />
-  <SiteCard title="北科学位论文" url="http://thesis.ustb.edu.cn" icon="/img/60007" />
-  <SiteCard title="贝壳学堂" url="http://mooc.ustb.edu.cn/" icon="/img/60041" desc="在线学习与培训平台" />
+  <SiteCard title="北科期刊中心" url="https://qkzx.ustb.edu.cn/qkdh/index.htm" icon="/img/194.png" />
+  <SiteCard title="北科学位论文" url="http://thesis.ustb.edu.cn" icon="/img/60007.png" />
+  <SiteCard title="贝壳学堂" url="http://mooc.ustb.edu.cn/" icon="/img/60041.png" desc="在线学习与培训平台" />
   <SiteCard title="化学实验虚拟仿真" url="http://xnaq.ustb.edu.cn" />
-  <SiteCard title="继续教育平台" url="http://emis.ustb.edu.cn" icon="/img/60010" desc="继续教育管理与服务平台" />
-  <SiteCard title="教师能力培训" url="http://jsfz.ustb.edu.cn/developCenter/home" icon="/img/192" />
-  <SiteCard title="教学资源平台" url="https://djvod.ustb.edu.cn/Default.aspx?stationID=1" icon="/img/92" />
+  <SiteCard title="继续教育平台" url="http://emis.ustb.edu.cn" icon="/img/60010.png" desc="继续教育管理与服务平台" />
+  <SiteCard title="教师能力培训" url="http://jsfz.ustb.edu.cn/developCenter/home" icon="/img/192.png" />
+  <SiteCard title="教学资源平台" url="https://djvod.ustb.edu.cn/Default.aspx?stationID=1" icon="/img/92.png" />
   <SiteCard title="期刊导航" url="https://sfx-86ustb.hosted.exlibrisgroup.com.cn/ej/ustb/ej.htm" />
   <SiteCard title="实验室安全教育" url="http://aqjy.ustb.edu.cn" icon="/img/XT2017026.png" desc="实验室安全教育与考试系统" />
-  <SiteCard title="图书馆书目检索" url="http://lib1.ustb.edu.cn" icon="/img/60031" />
+  <SiteCard title="图书馆书目检索" url="http://lib1.ustb.edu.cn" icon="/img/60031.png" />
   <SiteCard title="图书检索" url="http://lib1.ustb.edu.cn:8080/opac/search.php" />
-  <SiteCard title="危化品采购" url="https://whgl.ustb.edu.cn:8000" icon="/img/97" />
-  <SiteCard title="新生入馆教育" url="http://rgjy.ustb.edu.cn" icon="/img/60023" />
-  <SiteCard title="虚拟仿真实验" url="http://ilab.ustb.edu.cn" icon="/img/60032" desc="虚拟仿真实验教学平台" />
-  <SiteCard title="学术资源发现" url="http://discovery.ustb.edu.cn:1701/primo_library/libweb/action/search.do?vid=ustb" icon="/img/101" />
-  <SiteCard title="研究生教学" url="https://ustb2.yuketang.cn/pro/portal/courselist" icon="/img/60037" />
-  <SiteCard title="雨课堂" url="https://ustb.yuketang.cn/" icon="/img/60037" desc="雨课堂线上教育平台" />
-  <SiteCard title="智慧教学平台" url="https://ustb.smartclass.cn" icon="/img/60078" desc="智慧教学与互动平台" />
-  <SiteCard title="专业拓展课平台" url="https://mec.ustb.edu.cn/logon" icon="/img/150" />
+  <SiteCard title="危化品采购" url="https://whgl.ustb.edu.cn:8000" icon="/img/97.png" />
+  <SiteCard title="新生入馆教育" url="http://rgjy.ustb.edu.cn" icon="/img/60023.png" />
+  <SiteCard title="虚拟仿真实验" url="http://ilab.ustb.edu.cn" icon="/img/60032.png" desc="虚拟仿真实验教学平台" />
+  <SiteCard title="学术资源发现" url="http://discovery.ustb.edu.cn:1701/primo_library/libweb/action/search.do?vid=ustb" icon="/img/101.png" />
+  <SiteCard title="研究生教学" url="https://ustb2.yuketang.cn/pro/portal/courselist" icon="/img/60037.png" />
+  <SiteCard title="雨课堂" url="https://ustb.yuketang.cn/" icon="/img/60037.png" desc="雨课堂线上教育平台" />
+  <SiteCard title="智慧教学平台" url="https://ustb.smartclass.cn" icon="/img/60078.png" desc="智慧教学与互动平台" />
+  <SiteCard title="专业拓展课平台" url="https://mec.ustb.edu.cn/logon" icon="/img/150.png" />
 </SiteSection>
 
 ## 学院官网 {#official-schools}
@@ -148,9 +148,9 @@ aside: false
 ## 学生事务 {#official-student}
 
 <SiteSection subtitle="共 3 个">
-  <SiteCard title="贝壳校园微服务" url="http://jwstu.ustb.edu.cn" icon="/img/60074" desc="校园微服务聚合平台" />
+  <SiteCard title="贝壳校园微服务" url="http://jwstu.ustb.edu.cn" icon="/img/60074.png" desc="校园微服务聚合平台" />
   <SiteCard title="心理素质教育" url="http://xinli.ustb.edu.cn/" icon="/img/XT2017024.png" desc="心理素质与心理咨询教育中心" />
-  <SiteCard title="智慧学工" url="http://stu.ustb.edu.cn" icon="/img/60034" desc="学生日常事务统一管理平台" />
+  <SiteCard title="智慧学工" url="http://stu.ustb.edu.cn" icon="/img/60034.png" desc="学生日常事务统一管理平台" />
 </SiteSection>
 
 ## 财务资产 {#official-finance}
@@ -182,8 +182,8 @@ aside: false
   <SiteCard title="金山WPS365软件" url="https://soft.ustb.edu.cn/product.html?id=338" />
   <SiteCard title="麒麟操作系统" url="https://soft.ustb.edu.cn/product.html?id=392" />
   <SiteCard title="微软软件激活工具" url="https://soft.ustb.edu.cn/product.html?id=370" />
-  <SiteCard title="校园直播" url="https://live.ustb.edu.cn" icon="/img/60048" desc="校园活动直播与录制平台" />
-  <SiteCard title="校园IPTV" url="http://iptv.ustb.edu.cn" icon="/img/60050" desc="网络电视" />
+  <SiteCard title="校园直播" url="https://live.ustb.edu.cn" icon="/img/60048.png" desc="校园活动直播与录制平台" />
+  <SiteCard title="校园IPTV" url="http://iptv.ustb.edu.cn" icon="/img/60050.png" desc="网络电视" />
   <SiteCard title="Adobe Desktop" url="https://soft.ustb.edu.cn/product.html?id=361" />
   <SiteCard title="EndNote21" url="https://soft.ustb.edu.cn/product.html?id=353" />
   <SiteCard title="IT服务助手" url="http://chat.ustb.edu.cn/page/site/newPc?app=2" desc="信息办IT知识智能问答智能体" />
