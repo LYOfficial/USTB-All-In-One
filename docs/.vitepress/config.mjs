@@ -50,6 +50,14 @@ const sidebarMaterials = {
   ]
 }
 
+const sidebarCommunities = {
+  text: '同好社群',
+  collapsed: false,
+  items: [
+    { text: 'QQ群列表', link: '/communities#communities-groups' }
+  ]
+}
+
 export default defineConfig({
   title: "USTB All-In-One",
   description: "USTB 在 Github 上的常用开源工具及资料网站统计大全",
@@ -77,7 +85,8 @@ export default defineConfig({
     sidebar: {
       '/official': [sidebarOfficial],
       '/tools': [sidebarTools],
-      '/materials': [sidebarMaterials]
+      '/materials': [sidebarMaterials],
+      '/communities': [sidebarCommunities]
     },
 
     socialLinks: [

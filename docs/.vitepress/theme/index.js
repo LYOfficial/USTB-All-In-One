@@ -3,6 +3,7 @@ import './style.css'
 import SiteCard from './components/SiteCard.vue'
 import SiteGrid from './components/SiteGrid.vue'
 import SiteSection from './components/SiteSection.vue'
+import QqGroupCard from './components/QqGroupCard.vue'
 
 export default {
   extends: DefaultTheme,
@@ -10,5 +11,6 @@ export default {
     app.component('SiteCard', SiteCard)
     app.component('SiteGrid', SiteGrid)
     app.component('SiteSection', SiteSection)
+    app.component('QqGroupCard', QqGroupCard)
   }
 }
