@@ -180,12 +180,27 @@
   object-fit: cover;
 }
 
+.qq-group-card .site-card-title {
+  font-size: 1.05rem;
+  font-weight: 650;
+}
+
+.qq-group-card .site-card-desc {
+  font-size: 0.75rem;
+}
+
 .qq-group-action {
   position: absolute;
   right: 18px;
   color: var(--vp-c-brand-1);
   font-size: 0.75rem;
   font-weight: 600;
+}
+
+.qq-group-remark {
+  color: var(--vp-c-text-2);
+  font-size: 0.75rem;
+  line-height: 1.35;
 }
 
 @media (max-width: 540px) {

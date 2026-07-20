@@ -3,7 +3,7 @@ import { computed, ref } from 'vue'
 
 const props = defineProps({
   number: { type: String, required: true },
-  name: { type: String, default: '' },
+  name: { type: String, required: true },
   remark: { type: String, default: '' },
   joinUrl: { type: String, required: true }
 })
@@ -22,7 +22,7 @@ const avatarUrl = computed(() =>
     :href="joinUrl"
     target="_blank"
     rel="noopener noreferrer"
-    :aria-label="`申请加入 ${name || `QQ 群 ${number}`}`"
+    :aria-label="`申请加入 ${name}（QQ 群 ${number}）`"
   >
     <div class="site-card-icon qq-group-avatar">
       <img
@@ -33,10 +33,9 @@ const avatarUrl = computed(() =>
       />
     </div>
     <div class="site-card-body">
-      <div class="site-card-title">{{ name || `QQ群 ${number}` }}</div>
-      <div class="site-card-desc">
-        {{ remark ? `${remark} · 群号 ${number}` : '点击申请加入群聊' }}
-      </div>
+      <div class="site-card-title">{{ name }}</div>
+      <div class="site-card-desc">群号：{{ number }}</div>
+      <div v-if="remark" class="qq-group-remark">{{ remark }}</div>
     </div>
     <span class="qq-group-action" aria-hidden="true">加入 →</span>
   </a>
