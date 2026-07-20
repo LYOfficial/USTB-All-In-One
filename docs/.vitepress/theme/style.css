@@ -166,3 +166,34 @@
   font-weight: 500;
   pointer-events: none;
 }
+
+/* QQ 同好社群卡片 */
+.qq-group-card {
+  padding-right: 70px;
+}
+
+.qq-group-avatar {
+  border-radius: 50%;
+}
+
+.qq-group-avatar img {
+  object-fit: cover;
+}
+
+.qq-group-action {
+  position: absolute;
+  right: 18px;
+  color: var(--vp-c-brand-1);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+@media (max-width: 540px) {
+  .qq-group-card {
+    padding-right: 64px;
+  }
+
+  .qq-group-action {
+    right: 14px;
+  }
+}

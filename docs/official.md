@@ -53,6 +53,7 @@ aside: false
   <a href="/official" class="is-active">🏫 学校官方网站</a>
   <a href="/tools">🛠️ 开源工具</a>
   <a href="/materials">📚 学习资料</a>
+  <a href="/communities">👥 同好社群</a>
 </div>
 
 <p class="page-lead">

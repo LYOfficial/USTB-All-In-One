@@ -5,7 +5,7 @@
 [![MIT License](https://img.shields.io/github/license/LYOfficial/USTB-All-In-One)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/LYOfficial/USTB-All-In-One)](https://github.com/LYOfficial/USTB-All-In-One/stargazers)
 
-欢迎来到 **USTB-All-In-One**！这里集中整理了北京科技大学校友们开源的 **GitHub 实用工具**、**校园服务脚本**、**学习资料** 以及 **校内外常用站点**。
+欢迎来到 **USTB-All-In-One**！这里集中整理了北京科技大学校友们开源的 **GitHub 实用工具**、**校园服务脚本**、**学习资料**、**同好社群** 以及 **校内外常用站点**。
 
 本项目是基于 [VitePress](https://vitepress.dev/) 搭建的静态导航站，所有数据都是纯文本 Markdown，零门槛即可参与贡献！
 
@@ -15,14 +15,15 @@
 
 ## 📑 目录速览
 
-四个页面（首页 + 三个分区页），三页共享同一套 UI 骨架（顶部跳转条 + 右侧 sidebar 锚点导航 + 同样的 SiteCard/SiteSection 组件）：
+五个页面（首页 + 四个分区页），四页共享同一套 UI 骨架（顶部跳转条 + 右侧 sidebar 锚点导航 + 同样的卡片与分区组件）：
 
 | 页面 | 路径 | 收录内容 |
 | --- | --- | --- |
-| 🏠 [首页](docs/index.md) | `/` | Hero + Features 三入口（学校官网 / 开源工具 / 学习资料） |
+| 🏠 [首页](docs/index.md) | `/` | Hero + Features 四入口（学校官网 / 开源工具 / 学习资料 / 同好社群） |
 | 🏫 [学校官方网站](docs/official.md) | `/official` | 教务 / 图书馆 / 网络教学 / 学院 / 实验室 / 学生事务 / IT / AI 等官方服务 |
 | 🛠️ [开源工具](docs/tools.md) | `/tools` | 抢课、校园网、平安报、AI 等校友开源 GitHub 项目 |
 | 📚 [学习资料](docs/materials.md) | `/materials` | 课程合集、LaTeX 模板、复习宝典、实验报告等 |
+| 👥 [同好社群](docs/communities.md) | `/communities` | 北科兴趣交流 QQ 群头像、群号与一键加群入口 |
 
 ---
 
@@ -37,7 +38,7 @@ USTB 自建校以来人才辈出，许多校友留下了大量宝藏项目。但
 
 发现了好用的工具 / 资料？写了一键脚本？整理了期末复习宝典？**通通欢迎提交 PR！**
 
-> 整个仓库的数据层**只有 4 个 Markdown 文件**（首页 1 个 + 三个分区页各 1 个），没有任何数据库。三页使用同一套 UI（顶部跳转条 + 右侧 sidebar 锚点导航 + SiteCard/SiteSection 组件），保持视觉一致。
+> 整个仓库不依赖数据库，主要内容由 5 个 Markdown 页面维护；QQ 群列表单独保存在 `docs/.vitepress/data/qqGroups.js`。四个分区页使用同一套 UI（顶部跳转条 + 右侧 sidebar 锚点导航 + 卡片/分区组件），保持视觉一致。
 
 ### 🗂️ 仓库结构
 
@@ -48,14 +49,17 @@ USTB-All-In-One/
 │   ├── official.md               # 🏫 学校官方网站（按章节维护 SiteCard）
 │   ├── tools.md                  # 🛠️ 开源工具（GitHub 项目）
 │   ├── materials.md              # 📚 学习资料（GitHub 项目）
+│   ├── communities.md            # 👥 同好社群（QQ群列表）
 │   ├── CNAME                     # GitHub Pages 域名
 │   └── .vitepress/
 │       ├── config.mjs            # VitePress 站点配置（导航 / 侧边栏 / logo）
+│       ├── data/qqGroups.js       # QQ 群号与官方加群链接
 │       └── theme/                # 🎨 自定义主题
 │           ├── index.js          # 主题入口（注册全局组件）
 │           ├── style.css         # 卡片样式（3/2/1 列响应式）
 │           └── components/
 │               ├── SiteCard.vue  # 站点卡片（图标 + 标题 + 简介；图标三级 fallback）
+│               ├── QqGroupCard.vue # QQ 群卡片（群头像 + 群号 + 加群入口）
 │               ├── SiteGrid.vue  # 卡片网格容器（响应式）
 │               └── SiteSection.vue  # 章节块（仅副标题，由 markdown ## 提供主标题）
 └── docs/
@@ -85,8 +89,9 @@ USTB-All-In-One/
 | 新的官方站点 | `docs/official.md` | 对应章节的 `<SiteSection>…</SiteSection>` 块内 |
 | 新的开源工具 | `docs/tools.md` | 对应章节的 `<SiteSection>…</SiteSection>` 块内 |
 | 新的学习资料 | `docs/materials.md` | 对应章节的 `<SiteSection>…</SiteSection>` 块内 |
+| 新的同好社群 | `docs/.vitepress/data/qqGroups.js` | 在数组中添加群号与 QQ 官方加群链接 |
 
-三页顶部共享同一套跳转条与右侧 sidebar 锚点导航，UI 完全一致。如果你想新增一个**全新章节**，在对应 Markdown 文件中按下面的模板新增一段即可（不需要改任何 Vue 组件或 CSS）：
+四个分区页顶部共享同一套跳转条与右侧 sidebar 锚点导航，UI 完全一致。如果你想新增一个**全新章节**，在对应 Markdown 文件中按下面的模板新增一段即可（不需要改任何 Vue 组件或 CSS）：
 
 ```markdown
 ## 🌟 新章节标题 {#分区-anchor}
