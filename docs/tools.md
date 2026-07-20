@@ -97,8 +97,9 @@ aside: false
 
 ## 校园网 / 网络 {#tools-network}
 
-<SiteSection subtitle="共 20 个">
+<SiteSection subtitle="共 21 个">
 <SiteCard title="ustb-wifi-tools" url="https://github.com/CakeAL/ustb-wifi-tools" desc="校园网实用工具，查询流量、解绑 MAC" />
+<SiteCard title="BKNetwork" url="https://github.com/evansrrr/BKNetwork" desc="校园网v6一键免流" icon="https://raw.githubusercontent.com/evansrrr/BKNetwork/refs/heads/main/web/favicon.svg"/>
 <SiteCard title="Login-USTB-Net" url="https://github.com/login-ustb/Login-USTB-Net" desc="命令行快速登录校园网认证脚本" />
 <SiteCard title="ustb-cli" url="https://github.com/Jason23347/ustb-cli" desc="Linux 校园网工具箱：登录、账户/网费/流量" />
 <SiteCard title="USTBLogin" url="https://github.com/maning00/USTBLogin" desc="IPv6 长期稳定在线，自动重连，IPv6 DDNS 自动更新" />
