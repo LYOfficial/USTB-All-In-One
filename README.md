@@ -15,14 +15,15 @@
 
 ## 📑 目录速览
 
-五个页面（首页 + 四个分区页），四页共享同一套 UI 骨架（顶部跳转条 + 右侧 sidebar 锚点导航 + 同样的卡片与分区组件）：
+六个页面（首页 + 五个分区页），分区页共享同一套 UI 骨架（顶部跳转条 + sidebar 锚点导航 + 同样的卡片与分区组件）：
 
 | 页面 | 路径 | 收录内容 |
 | --- | --- | --- |
-| 🏠 [首页](docs/index.md) | `/` | Hero 展示；四个分区入口统一位于顶部菜单栏 |
+| 🏠 [首页](docs/index.md) | `/` | Hero 展示与每周校园活动；活动数据每日 00:30 自动刷新 |
 | 🏫 [学校官方网站](docs/official.md) | `/official` | 教务 / 图书馆 / 网络教学 / 学院 / 实验室 / 学生事务 / IT / AI 等官方服务 |
 | 🛠️ [开源工具](docs/tools.md) | `/tools` | 抢课、校园网、平安报、AI 等校友开源 GitHub 项目 |
 | 📚 [学习资料](docs/materials.md) | `/materials` | 课程合集、LaTeX 模板、复习宝典、实验报告等 |
+| 🏛️ [校内社团](docs/clubs.md) | `/clubs` | 按 A–H 类整理社团名、社团代号与简介（不保存图片） |
 | 👥 [同好社群](docs/communities.md) | `/communities` | 北科兴趣交流 QQ 群头像、群号与一键加群入口 |
 
 ---
@@ -38,7 +39,7 @@ USTB 自建校以来人才辈出，许多校友留下了大量宝藏项目。但
 
 发现了好用的工具 / 资料？写了一键脚本？整理了期末复习宝典？**通通欢迎提交 PR！**
 
-> 整个仓库不依赖数据库，主要内容由 5 个 Markdown 页面维护；QQ 群列表单独保存在 `docs/.vitepress/data/qqGroups.js`。四个分区页使用同一套 UI（顶部跳转条 + 右侧 sidebar 锚点导航 + 卡片/分区组件），保持视觉一致。
+> 整个仓库不依赖数据库，主要内容由 6 个 Markdown 页面维护；QQ 群、校内社团与每周活动分别保存在 `docs/.vitepress/data/qqGroups.js`、`clubs.js` 和 `activities.js`。活动抓取由 GitHub Actions 在北京时间每日 00:30 自动执行。
 
 ### 🗂️ 仓库结构
 
@@ -49,17 +50,20 @@ USTB-All-In-One/
 │   ├── official.md               # 🏫 学校官方网站（按章节维护 SiteCard）
 │   ├── tools.md                  # 🛠️ 开源工具（GitHub 项目）
 │   ├── materials.md              # 📚 学习资料（GitHub 项目）
+│   ├── clubs.md                  # 🏛️ 校内社团（A–H 分类纯文本信息）
 │   ├── communities.md            # 👥 同好社群（QQ群列表）
 │   ├── CNAME                     # GitHub Pages 域名
 │   └── .vitepress/
 │       ├── config.mjs            # VitePress 站点配置（导航 / 侧边栏 / logo）
-│       ├── data/qqGroups.js       # QQ 群号与官方加群链接
+│       ├── data/                  # QQ 群、社团与每周活动数据
 │       └── theme/                # 🎨 自定义主题
 │           ├── index.js          # 主题入口（注册全局组件）
 │           ├── style.css         # 卡片样式（3/2/1 列响应式）
 │           └── components/
 │               ├── SiteCard.vue  # 站点卡片（图标 + 标题 + 简介；图标三级 fallback）
 │               ├── QqGroupCard.vue # QQ 群卡片（群头像 + 群号 + 加群入口）
+│               ├── ClubCard.vue  # 校内社团纯文本卡片
+│               ├── WeeklyActivities.vue # 首页每周活动（左图右文）
 │               ├── SiteGrid.vue  # 卡片网格容器（响应式）
 │               └── SiteSection.vue  # 章节块（仅副标题，由 markdown ## 提供主标题）
 └── docs/
@@ -70,6 +74,8 @@ USTB-All-In-One/
 ├── docker-compose.yml            # docker compose 配置（含 healthcheck / 资源限制）
 ├── docker/
 │   └── nginx.conf                # nginx 配置（SPA fallback / gzip / 不可变缓存）
+├── scripts/scrape-activities.mjs # 校内活动日历抓取与图片缓存
+├── .github/workflows/            # 每日 00:30 自动刷新活动
 ├── package.json                  # npm scripts（dev / build / preview）
 └── README.md
 ```
@@ -89,9 +95,10 @@ USTB-All-In-One/
 | 新的官方站点 | `docs/official.md` | 对应章节的 `<SiteSection>…</SiteSection>` 块内 |
 | 新的开源工具 | `docs/tools.md` | 对应章节的 `<SiteSection>…</SiteSection>` 块内 |
 | 新的学习资料 | `docs/materials.md` | 对应章节的 `<SiteSection>…</SiteSection>` 块内 |
+| 新的校内社团 | `docs/.vitepress/data/clubs.js` | 在对应 A–H 分类数组中添加社团名、代号与简介 |
 | 新的同好社群 | `docs/.vitepress/data/qqGroups.js` | 在数组中添加群号与 QQ 官方加群链接 |
 
-四个分区页顶部共享同一套跳转条与右侧 sidebar 锚点导航，UI 完全一致。如果你想新增一个**全新章节**，在对应 Markdown 文件中按下面的模板新增一段即可（不需要改任何 Vue 组件或 CSS）：
+五个分区页顶部共享同一套跳转条与 sidebar 锚点导航，UI 保持一致。如果你想新增一个**全新章节**，在对应 Markdown 文件中按下面的模板新增一段即可（不需要改任何 Vue 组件或 CSS）：
 
 ```markdown
 ## 🌟 新章节标题 {#分区-anchor}

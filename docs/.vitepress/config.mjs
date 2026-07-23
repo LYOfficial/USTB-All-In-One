@@ -50,6 +50,21 @@ const sidebarMaterials = {
   ]
 }
 
+const sidebarClubs = {
+  text: '校内社团',
+  collapsed: false,
+  items: [
+    { text: 'A类 · 思想', link: '/clubs#clubs-a' },
+    { text: 'B类 · 科学实践', link: '/clubs#clubs-b' },
+    { text: 'C类 · 学术知识', link: '/clubs#clubs-c' },
+    { text: 'D类 · 创新创业', link: '/clubs#clubs-d' },
+    { text: 'E类 · 文化', link: '/clubs#clubs-e' },
+    { text: 'F类 · 传媒', link: '/clubs#clubs-f' },
+    { text: 'G类 · 艺术', link: '/clubs#clubs-g' },
+    { text: 'H类 · 竞技', link: '/clubs#clubs-h' }
+  ]
+}
+
 const sidebarCommunities = {
   text: '同好社群',
   collapsed: false,
@@ -73,6 +88,7 @@ export default defineConfig({
       { text: '学校官方网站', link: '/official' },
       { text: '开源工具', link: '/tools' },
       { text: '学习资料', link: '/materials' },
+      { text: '校内社团', link: '/clubs' },
       { text: '同好社群', link: '/communities' },
       { text: 'GitHub', link: 'https://github.com/LYOfficial/USTB-All-In-One' }
     ],
@@ -89,6 +105,7 @@ export default defineConfig({
       '/official': [sidebarOfficial],
       '/tools': [sidebarTools],
       '/materials': [sidebarMaterials],
+      '/clubs': [sidebarClubs],
       '/communities': [sidebarCommunities]
     },
 
@@ -102,7 +119,7 @@ export default defineConfig({
 
     footer: {
       message: 'Released under the <a href="https://github.com/LYOfficial/USTB-All-In-One#GPL-3.0-1-ov-file">GPL-3.0 License</a>.',
-      copyright: 'Copyright © 2026 SkyCode'
+      copyright: 'Copyright © 2026 <a href="https://www.ustb.world/about" target="_blank" rel="noopener noreferrer">SkyCode</a>'
     }
   }
 })

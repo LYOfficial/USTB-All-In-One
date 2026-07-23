@@ -212,3 +212,261 @@
     right: 14px;
   }
 }
+
+/* 首页：本周校园活动（沿用活动日历的左图右文结构） */
+.weekly-activities {
+  width: min(1120px, calc(100% - 48px));
+  margin: 28px auto 72px;
+}
+
+.weekly-activities-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.weekly-activities-heading h2 {
+  margin: 2px 0 4px;
+  border: 0;
+  padding: 0;
+  font-size: 1.75rem;
+  line-height: 1.25;
+}
+
+.weekly-activities-heading > a {
+  flex-shrink: 0;
+  color: var(--vp-c-brand-1);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.weekly-activities-kicker {
+  margin: 0;
+  color: var(--vp-c-brand-1);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.weekly-activities-subtitle {
+  margin: 0;
+  color: var(--vp-c-text-3);
+  font-size: 0.82rem;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.activity-card {
+  display: grid;
+  grid-template-columns: minmax(280px, 34%) minmax(0, 1fr);
+  min-height: 206px;
+  overflow: hidden;
+  border: 1px solid var(--site-card-border);
+  border-radius: 14px;
+  color: inherit !important;
+  background: var(--site-card-bg);
+  box-shadow: var(--site-card-shadow);
+  text-decoration: none !important;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.09);
+}
+
+.activity-card-image {
+  min-height: 206px;
+  overflow: hidden;
+  background: var(--vp-c-bg-soft);
+}
+
+.activity-card-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 206px;
+  display: block;
+  object-fit: cover;
+}
+
+.activity-card-image-fallback {
+  width: 100%;
+  height: 100%;
+  min-height: 206px;
+  display: grid;
+  place-items: center;
+  color: var(--vp-c-brand-1);
+  background: linear-gradient(135deg, var(--vp-c-brand-soft), var(--vp-c-bg-soft));
+  font-size: 1.25rem;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+}
+
+.activity-card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 26px 20px;
+}
+
+.activity-card-content h3 {
+  margin: 0 0 10px;
+  color: var(--vp-c-text-1);
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+
+.activity-card-description {
+  margin: 0 0 16px;
+  color: var(--vp-c-text-2);
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+.activity-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--vp-c-text-2);
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.activity-card-meta span {
+  width: 1em;
+  color: var(--vp-c-brand-1);
+  font-weight: 700;
+  text-align: center;
+}
+
+.activity-card-time {
+  margin-top: auto;
+}
+
+.activity-empty {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px dashed var(--site-card-border);
+  border-radius: 14px;
+  color: var(--vp-c-text-3);
+  background: var(--vp-c-bg-soft);
+}
+
+.activity-empty span {
+  font-size: 1.75rem;
+}
+
+.activity-empty p {
+  margin: 0;
+}
+
+/* 校内社团：纯文本卡片，不展示或保存图片 */
+.club-category-meta {
+  margin: 0.25rem 0 1rem;
+  color: var(--vp-c-text-3);
+  font-size: 0.82rem;
+}
+
+.club-category-meta a {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+}
+
+.club-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0 0 2.75rem;
+}
+
+.club-card {
+  min-width: 0;
+  padding: 20px 22px;
+  border: 1px solid var(--site-card-border);
+  border-radius: var(--site-card-radius);
+  background: var(--site-card-bg);
+  box-shadow: var(--site-card-shadow);
+}
+
+.club-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.club-card-header h3 {
+  margin: 0;
+  color: var(--vp-c-text-1);
+  font-size: 1.02rem;
+  line-height: 1.4;
+}
+
+.club-code {
+  flex-shrink: 0;
+  padding: 3px 8px;
+  border-radius: 999px;
+  color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.03em;
+}
+
+.club-card > p {
+  margin: 0;
+  color: var(--vp-c-text-2);
+  font-size: 0.84rem;
+  line-height: 1.75;
+  text-align: justify;
+}
+
+@media (max-width: 720px) {
+  .weekly-activities {
+    width: min(100% - 32px, 1120px);
+    margin-bottom: 52px;
+  }
+
+  .weekly-activities-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .activity-card {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-card-image,
+  .activity-card-image img,
+  .activity-card-image-fallback {
+    min-height: 190px;
+    max-height: 230px;
+  }
+
+  .activity-card-content {
+    padding: 19px 20px 20px;
+  }
+
+  .club-grid {
+    grid-template-columns: 1fr;
+  }
+}
