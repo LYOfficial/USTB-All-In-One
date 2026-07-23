@@ -7,8 +7,6 @@ aside: false
 import qqGroups from './.vitepress/data/qqGroups.js'
 </script>
 
-# 👥 同好社群
-
 ## QQ群列表 {#communities-groups}
 
 <SiteSection :subtitle="`共 ${qqGroups.length} 个`">

@@ -167,6 +167,11 @@
   pointer-events: none;
 }
 
+/* 分区页已由顶栏标明当前栏目，首个二级标题直接贴近正文顶部。 */
+.vp-doc > h2:first-of-type {
+  margin-top: 0;
+}
+
 /* QQ 同好社群卡片 */
 .qq-group-card {
   padding-right: 70px;

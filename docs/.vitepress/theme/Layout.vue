@@ -23,6 +23,17 @@ const {
 const route = useRoute()
 watch(() => route.path, closeSidebar)
 
+const currentMenuText = computed(() => {
+  const section = route.path.split('/').filter(Boolean)[0] || ''
+  return {
+    official: '学校官方网站',
+    tools: '开源工具',
+    materials: '学习资料',
+    clubs: '校内社团',
+    communities: '同好社群'
+  }[section] || '首页'
+})
+
 useCloseSidebarOnEscape(isSidebarOpen, closeSidebar)
 
 const { frontmatter } = useData()
@@ -45,7 +56,10 @@ function toggleSidebar() {
 
     <VPNav>
       <template #nav-bar-title-before><slot name="nav-bar-title-before" /></template>
-      <template #nav-bar-title-after><slot name="nav-bar-title-after" /></template>
+      <template #nav-bar-title-after>
+        <span class="mobile-current-menu">{{ currentMenuText }}</span>
+        <slot name="nav-bar-title-after" />
+      </template>
       <template #nav-bar-content-before><slot name="nav-bar-content-before" /></template>
       <template #nav-bar-content-after><slot name="nav-bar-content-after" /></template>
       <template #nav-screen-content-before><slot name="nav-screen-content-before" /></template>
@@ -116,7 +130,37 @@ function toggleSidebar() {
   display: none;
 }
 
+.mobile-current-menu {
+  display: none;
+}
+
 @media (max-width: 959px) {
+  .Layout {
+    padding-top: var(--vp-nav-height);
+  }
+
+  :deep(.VPNav) {
+    position: fixed;
+  }
+
+  :deep(.VPNavBar) {
+    border-bottom: 1px solid var(--vp-c-divider);
+    background-color: var(--vp-nav-bg-color);
+  }
+
+  :deep(.VPNavBarTitle .title > span:not(.mobile-current-menu)) {
+    display: none;
+  }
+
+  .mobile-current-menu {
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+    color: var(--vp-c-text-1);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .mobile-sidebar-toggle {
     position: fixed;
     top: 50%;

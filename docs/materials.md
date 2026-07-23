@@ -9,8 +9,6 @@ aside: false
 }
 </style>
 
-# 📚 学习资料
-
 ## 论文 / LaTeX 模板 {#materials-latex}
 
 <SiteSection subtitle="共 12 个">

@@ -9,8 +9,6 @@ aside: false
 }
 </style>
 
-# 🏫 学校官方网站
-
 ## 学校主站与门户 {#official-main}
 
 <SiteSection subtitle="共 9 个">

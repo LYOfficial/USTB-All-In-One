@@ -9,8 +9,6 @@ import clubCategories from './.vitepress/data/clubs.js'
 const category = (id) => clubCategories.find((item) => item.id === id)
 </script>
 
-# 🏛️ 校内社团
-
 ## A类 · 思想 {#clubs-a}
 
 <div class="club-category-meta">共 {{ category('a').clubs.length }} 个 · <a :href="category('a').sourceUrl" target="_blank" rel="noopener noreferrer">查看原材料</a></div>

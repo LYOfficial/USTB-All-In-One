@@ -10,7 +10,6 @@ import activities from '../../data/activities.js'
         <h2 id="weekly-activities-title">本周校园活动</h2>
         <p class="weekly-activities-subtitle">
           {{ activities.range.start }} 至 {{ activities.range.end }}
-          <span v-if="activities.updatedAt"> · 每日 00:30 更新</span>
         </p>
       </div>
       <a :href="activities.sourceUrl" target="_blank" rel="noopener noreferrer">查看活动日历 →</a>
