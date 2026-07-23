@@ -11,8 +11,6 @@ const category = (id) => clubCategories.find((item) => item.id === id)
 
 # 🏛️ 校内社团
 
-共收录 {{ clubCategories.reduce((total, item) => total + item.clubs.length, 0) }} 个校内社团。仅整理社团名、社团代号与简介，不存放或记录社团图片。
-
 ## A类 · 思想 {#clubs-a}
 
 <div class="club-category-meta">共 {{ category('a').clubs.length }} 个 · <a :href="category('a').sourceUrl" target="_blank" rel="noopener noreferrer">查看原材料</a></div>
