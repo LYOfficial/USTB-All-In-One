@@ -226,10 +226,20 @@
   }
 }
 
-/* 首页：本周校园活动（沿用活动日历的左图右文结构） */
+/* 首页：缩小 Hero 与本周校园活动之间的留白 */
+.VPHome .VPHero {
+  padding-bottom: 24px;
+}
+
+@media (min-width: 640px) {
+  .VPHome .VPHero {
+    padding-bottom: 32px;
+  }
+}
+
 .weekly-activities {
   width: min(1120px, calc(100% - 48px));
-  margin: 28px auto 72px;
+  margin: 12px auto 72px;
 }
 
 .weekly-activities-heading {

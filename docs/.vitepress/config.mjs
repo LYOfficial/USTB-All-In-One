@@ -74,7 +74,7 @@ const sidebarCommunities = {
 }
 
 export default defineConfig({
-  title: "USTB All-In-One",
+  title: "USTB All In One",
   description: "USTB 在 Github 上的常用开源工具及资料网站统计大全",
   // Clean URLs (without .html) for nicer share links
   cleanUrls: true,
@@ -89,15 +89,14 @@ export default defineConfig({
       { text: '开源工具', link: '/tools' },
       { text: '学习资料', link: '/materials' },
       { text: '校内社团', link: '/clubs' },
-      { text: '同好社群', link: '/communities' },
-      { text: 'GitHub', link: 'https://github.com/LYOfficial/USTB-All-In-One' }
+      { text: '同好社群', link: '/communities' }
     ],
 
     // 站点 Logo：白天用 original_p.png，黑夜用 monochrome_p.png
     logo: {
       src: '/icon/original_p.png',
       srcDark: '/icon/monochrome_p.png',
-      alt: 'USTB All-In-One'
+      alt: 'USTB All In One'
     },
 
     // 每页右侧 sidebar 列出当前页面的全部子节锚点，三页 UI 一致

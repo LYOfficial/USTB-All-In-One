@@ -227,8 +227,5 @@ docker run -d --name ustb-all-in-one -p 2000:80 ustb-all-in-one
 
 [![Contrib](https://contrib.rocks/image?repo=LYOfficial/USTB-All-In-One)](https://github.com/LYOfficial/USTB-All-In-One/graphs/contributors)
 
-## 📈 我们的成长
-
-[![Stargazers over time](https://starchart.cc/LYOfficial/USTB-All-In-One.svg?variant=adaptive)](https://starchart.cc/LYOfficial/USTB-All-In-One/stargazers)
 
 > 如果觉得本项目对你有帮助，请不要吝啬右上角的 **⭐ Star**，你的支持是我们持续整理的动力！
