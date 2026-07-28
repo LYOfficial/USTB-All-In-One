@@ -1,6 +1,6 @@
 <script setup>
 import { useRoute } from 'vitepress'
-import { computed, provide, useSlots, watch } from 'vue'
+import { computed, onMounted, provide, ref, useSlots, watch } from 'vue'
 import VPBackdrop from 'vitepress/dist/client/theme-default/components/VPBackdrop.vue'
 import VPContent from 'vitepress/dist/client/theme-default/components/VPContent.vue'
 import VPFooter from 'vitepress/dist/client/theme-default/components/VPFooter.vue'
@@ -23,6 +23,41 @@ const {
 
 const route = useRoute()
 watch(() => route.path, closeSidebar)
+
+const pageViewCount = ref(null)
+const pageViewFailed = ref(false)
+let hasMounted = false
+
+async function recordPageView() {
+  try {
+    const response = await fetch('/api/page-view', {
+      method: 'POST',
+      headers: { Accept: 'application/json' }
+    })
+
+    if (!response.ok) throw new Error(`HTTP ${response.status}`)
+
+    const data = await response.json()
+    if (!Number.isSafeInteger(data.count) || data.count < 0) {
+      throw new Error('Invalid page view count')
+    }
+
+    pageViewCount.value = Math.max(pageViewCount.value ?? 0, data.count)
+    pageViewFailed.value = false
+  } catch (error) {
+    pageViewFailed.value = true
+    console.warn('Failed to record page view:', error)
+  }
+}
+
+onMounted(() => {
+  hasMounted = true
+  recordPageView()
+})
+
+watch(() => route.path, () => {
+  if (hasMounted) recordPageView()
+})
 
 const currentMenuText = computed(() => {
   const section = route.path.split('/').filter(Boolean)[0] || ''
@@ -95,7 +130,7 @@ function toggleSidebar() {
       <template #home-hero-info><slot name="home-hero-info" /></template>
       <template #home-hero-info-after><slot name="home-hero-info-after" /></template>
       <template #home-hero-actions-after>
-        <PageViewCounter />
+        <PageViewCounter :count="pageViewCount" :failed="pageViewFailed" />
         <slot name="home-hero-actions-after" />
       </template>
       <template #home-hero-image><slot name="home-hero-image" /></template>

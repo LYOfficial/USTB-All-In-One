@@ -7,7 +7,7 @@
 # ---- Stage 1: Build the static site -----------------------------------------
 FROM node:20-alpine AS builder
 
-# pnpm enables faster, deterministic installs (matches the lockfile-less workflow)
+# Enable Corepack for environments that also use pnpm during maintenance.
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
 WORKDIR /app

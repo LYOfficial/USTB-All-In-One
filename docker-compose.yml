@@ -20,10 +20,7 @@ services:
       timeout: 5s
       retries: 3
       start_period: 10s
-    # CNAME lives next to the docs; mounting it lets the deploy host serve the
-    # right GitHub Pages-style domain without rebuilding the image.
     volumes:
-      - ./docs/CNAME:/usr/share/nginx/html/CNAME:ro
       # Named volume keeps the accumulated page views across rebuilds/redeploys.
       - page-view-data:/data
     # Resource caps keep the static site well within the free tier on most hosts

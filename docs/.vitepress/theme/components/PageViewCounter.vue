@@ -1,27 +1,12 @@
 <script setup>
-import { onMounted, ref } from 'vue'
-
-const count = ref(null)
-const failed = ref(false)
-
-onMounted(async () => {
-  try {
-    const response = await fetch('/api/page-view', {
-      method: 'POST',
-      headers: { Accept: 'application/json' }
-    })
-
-    if (!response.ok) throw new Error(`HTTP ${response.status}`)
-
-    const data = await response.json()
-    if (!Number.isSafeInteger(data.count) || data.count < 0) {
-      throw new Error('Invalid page view count')
-    }
-
-    count.value = data.count
-  } catch (error) {
-    failed.value = true
-    console.warn('Failed to load page view count:', error)
+defineProps({
+  count: {
+    type: Number,
+    default: null
+  },
+  failed: {
+    type: Boolean,
+    default: false
   }
 })
 </script>
