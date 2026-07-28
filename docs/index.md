@@ -9,14 +9,6 @@ hero:
   image:
     src: /icon/original_p.png
     alt: USTB All-In-One
-  actions:
-    - theme: brand
-      text: 探索应用
-      link: /official
-    - theme: alt
-      text: 在 GitHub 上查看
-      link: https://github.com/LYOfficial/USTB-All-In-One
-
 ---
 
 <style>

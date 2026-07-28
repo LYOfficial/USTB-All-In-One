@@ -231,9 +231,80 @@
   padding-bottom: 24px;
 }
 
+.home-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -6px;
+  padding-top: 24px;
+}
+
+.home-hero-action {
+  flex-shrink: 0;
+  padding: 6px;
+}
+
+.home-hero-button {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 38px;
+  text-align: center;
+  white-space: nowrap;
+  transition: color 0.25s, border-color 0.25s, background-color 0.25s;
+}
+
+.home-hero-button.brand {
+  border-color: var(--vp-button-brand-border);
+  color: var(--vp-button-brand-text);
+  background-color: var(--vp-button-brand-bg);
+}
+
+.home-hero-button.brand:hover {
+  border-color: var(--vp-button-brand-hover-border);
+  color: var(--vp-button-brand-hover-text);
+  background-color: var(--vp-button-brand-hover-bg);
+}
+
+.home-hero-button.alt {
+  border-color: var(--vp-button-alt-border);
+  color: var(--vp-button-alt-text);
+  background-color: var(--vp-button-alt-bg);
+}
+
+.home-hero-button.alt:hover {
+  border-color: var(--vp-button-alt-hover-border);
+  color: var(--vp-button-alt-hover-text);
+  background-color: var(--vp-button-alt-hover-bg);
+}
+
+.page-view-count {
+  border-color: var(--vp-c-divider);
+  color: var(--vp-c-text-2);
+  background-color: var(--vp-c-bg-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.page-view-count.is-loading {
+  color: var(--vp-c-text-3);
+}
+
 @media (min-width: 640px) {
   .VPHome .VPHero {
     padding-bottom: 32px;
+  }
+
+  .home-hero-actions {
+    padding-top: 32px;
+  }
+}
+
+@media (min-width: 960px) {
+  .home-hero-actions {
+    justify-content: flex-start;
   }
 }
 

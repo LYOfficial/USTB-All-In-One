@@ -15,7 +15,7 @@ services:
       # Host port 2000 matches the existing `npm start` script
       - "${USTB_PORT:-2000}:80"
     healthcheck:
-      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/api/page-view/health"]
       interval: 30s
       timeout: 5s
       retries: 3
@@ -24,6 +24,8 @@ services:
     # right GitHub Pages-style domain without rebuilding the image.
     volumes:
       - ./docs/CNAME:/usr/share/nginx/html/CNAME:ro
+      # Named volume keeps the accumulated page views across rebuilds/redeploys.
+      - page-view-data:/data
     # Resource caps keep the static site well within the free tier on most hosts
     deploy:
       resources:
@@ -49,3 +51,7 @@ services:
 # networks:
 #   web:
 #     external: true
+
+volumes:
+  page-view-data:
+    name: ustb-all-in-one-page-views

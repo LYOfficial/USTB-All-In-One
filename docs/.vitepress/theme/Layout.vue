@@ -8,6 +8,7 @@ import VPNav from 'vitepress/dist/client/theme-default/components/VPNav.vue'
 import VPSidebar from 'vitepress/dist/client/theme-default/components/VPSidebar.vue'
 import VPSkipLink from 'vitepress/dist/client/theme-default/components/VPSkipLink.vue'
 import { useData } from 'vitepress/dist/client/theme-default/composables/data.js'
+import PageViewCounter from './components/PageViewCounter.vue'
 import {
   useCloseSidebarOnEscape,
   useSidebar
@@ -93,7 +94,10 @@ function toggleSidebar() {
       <template #home-hero-info-before><slot name="home-hero-info-before" /></template>
       <template #home-hero-info><slot name="home-hero-info" /></template>
       <template #home-hero-info-after><slot name="home-hero-info-after" /></template>
-      <template #home-hero-actions-after><slot name="home-hero-actions-after" /></template>
+      <template #home-hero-actions-after>
+        <PageViewCounter />
+        <slot name="home-hero-actions-after" />
+      </template>
       <template #home-hero-image><slot name="home-hero-image" /></template>
       <template #home-hero-after><slot name="home-hero-after" /></template>
       <template #home-features-before><slot name="home-features-before" /></template>

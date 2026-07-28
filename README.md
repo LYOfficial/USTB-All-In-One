@@ -205,10 +205,12 @@ docker compose down
 
 ```bash
 docker build -t ustb-all-in-one .
-docker run -d --name ustb-all-in-one -p 2000:80 ustb-all-in-one
+docker volume create ustb-all-in-one-page-views
+docker run -d --name ustb-all-in-one -p 2000:80 \
+  -v ustb-all-in-one-page-views:/data ustb-all-in-one
 ```
 
-镜像基于 `nginx:1.27-alpine`，构建阶段使用 `node:20-alpine`，最终产物仅约 **40 MB**，包含 healthcheck、资源限制与 CNAME 热更新。详见 [Dockerfile](Dockerfile) 与 [docker-compose.yml](docker-compose.yml)。
+镜像基于 `nginx:1.27-alpine`，构建阶段使用 `node:20-alpine`。首页每次加载会通过 `/api/page-view` 累加浏览量，计数保存在容器的 `/data/page-views.json`；`docker-compose.yml` 已将该目录挂载到名为 `ustb-all-in-one-page-views` 的本地 Docker 卷，因此重建镜像或重部署容器不会清空数据（除非手动删除该卷）。镜像同时包含 healthcheck、资源限制与 CNAME 热更新。详见 [Dockerfile](Dockerfile) 与 [docker-compose.yml](docker-compose.yml)。
 
 ---
 
