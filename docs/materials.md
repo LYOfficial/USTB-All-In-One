@@ -52,15 +52,14 @@ aside: false
 
 ## 数学 / 物理 {#materials-math}
 
-<SiteSection subtitle="共 3 个">
+<SiteSection subtitle="共 2 个">
 <SiteCard title="USTB-Physical-Experiments" url="https://github.com/simcrq/USTB-Physical-Experiments" desc="USTB 理科物理实验笔记" />
-<SiteCard title="Gewulab" url="https://github.com/BarnabyAlexandraBaron/Gewulab" desc="大物实验数字计算脚本" />
 <SiteCard title="AQM2014" url="https://github.com/jiyanjiang/AQM2014" desc="USTB 2014 AQM 笔记" />
 </SiteSection>
 
 ## 计算机 / 软件工程 {#materials-cs}
 
-<SiteSection subtitle="共 51 个">
+<SiteSection subtitle="共 50 个">
 <SiteCard title="USTB-cpp-programming" url="https://github.com/CakeAL/ustb-cpp-programming" desc="USTB 程序设计实践 I" />
 <SiteCard title="USTB-CPP-Programming" url="https://github.com/study-233/USTB-CPP-Programming" desc="USTB 程序设计基础 A 与程序设计实践 I" />
 <SiteCard title="USTB-Programming_Project_Sets" url="https://github.com/Char1esss-xyz/USTB_Programming_Project_Sets" desc="编程实践大作业" />
@@ -156,11 +155,9 @@ aside: false
 
 ## 周边项目 {#materials-others}
 
-<SiteSection subtitle="共 15 个">
+<SiteSection subtitle="共 13 个">
 <SiteCard title="memora" url="https://github.com/USTB-806/memora" desc="USTB 806 实验室项目" />
 <SiteCard title="Source-of-USTB" url="https://github.com/Source-of-USTB" desc="学习/项目仓库组" />
-<SiteCard title="The-Beike" url="https://github.com/isHarryh/The-Beike" desc="大贝壳：USTB 校园助手" />
-<SiteCard title="USTB-Term-Assignments" url="https://github.com/isHarryh/USTB-Term-Assignments" desc="USTB 课程大作业合集" />
 <template #outdated>
 <SiteCard title="USTB-Dude" url="https://github.com/dashjay/USTB-Dude" desc="What's up dude?" badge="OUTDATED" />
 <SiteCard title="USTB-Welcome" url="https://github.com/Vincent-Leon/USTB-Welcome" desc="iBeiKe 团队新生手册" badge="OUTDATED" />

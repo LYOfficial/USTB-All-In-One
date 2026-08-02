@@ -29,9 +29,7 @@ const sidebarTools = {
     { text: '教务 / 成绩 / 课表', link: '/tools#tools-academic' },
     { text: '在线学习 / 网课', link: '/tools#tools-online-learning' },
     { text: '趣味 / 游戏 / 杂项', link: '/tools#tools-fun' },
-    { text: 'AI / 机器学习 / 爬虫', link: '/tools#tools-ai' },
     { text: '系统 / 编译器 / 体系结构', link: '/tools#tools-system' },
-    { text: 'LaTeX 模板', link: '/tools#tools-latex' },
     { text: '其他小工具', link: '/tools#tools-misc' }
   ]
 }

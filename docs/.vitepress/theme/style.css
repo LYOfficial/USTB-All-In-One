@@ -57,11 +57,15 @@
   content: '';
 }
 
-.site-section-outdated-toggle span {
+.site-section-outdated-toggle svg {
   display: block;
-  font-size: 18px;
-  line-height: 1;
-  transform: rotate(90deg);
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   transition: transform 0.15s ease, color 0.15s ease;
 }
 
@@ -69,8 +73,8 @@
   color: var(--vp-c-text-1);
 }
 
-.site-section-outdated[open] .site-section-outdated-toggle span {
-  transform: rotate(270deg);
+.site-section-outdated[open] .site-section-outdated-toggle svg {
+  transform: rotate(180deg);
 }
 
 /* 网格：默认 3 列（卡片足够宽以容纳标题+描述） */

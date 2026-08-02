@@ -93,20 +93,11 @@ aside: false
 
 ## 趣味 / 游戏 / 杂项 {#tools-fun}
 
-<SiteSection subtitle="共 13 个">
+<SiteSection subtitle="共 4 个">
 <SiteCard title="go-arcade-ustb" url="https://github.com/zeronx798/go-arcade-ustb" desc="北科周边街机游戏地图" />
 <SiteCard title="USTB-Adventure" url="https://github.com/RoboEva/USTB-Adventure" desc="基于 FunCode 平台的跑酷类游戏" />
+<SiteCard title="USTBL" url="https://github.com/LYOfficial/USTBL" desc="USTB-SkyCode Minecraft Launcher" />
 <SiteCard title="auto-get-ustb-ammeter" url="https://github.com/CakeAL/auto-get-ustb-ammeter" desc="自动获取北科电表电量并整理成 CSV" />
-</SiteSection>
-
-## AI / 机器学习 / 爬虫 {#tools-ai}
-
-<SiteSection subtitle="共 6 个">
-<SiteCard title="ustb-ai3d" url="https://github.com/ustb-ai3d" desc="北科大 AI3D 视觉实验室" />
-<template #outdated>
-<SiteCard title="USTBCrawlers" url="https://github.com/nladuo/USTBCrawlers" desc="「那些年，我爬过的北科」定向爬虫教程" badge="OUTDATED" />
-<SiteCard title="AI-GROWING-USTB-305LAB" url="https://github.com/2JONAS/AI-GROWING-USTB-305LAB" desc="AI 305 实验室成长记录" badge="OUTDATED" />
-</template>
 </SiteSection>
 
 ## 系统 / 编译器 / 体系结构 {#tools-system}
@@ -123,38 +114,14 @@ aside: false
 </template>
 </SiteSection>
 
-## LaTeX 模板 {#tools-latex}
-
-<SiteSection subtitle="共 12 个">
-<SiteCard title="USTBExam" url="https://github.com/htharoldht/USTBExam" desc="北京科技大学试卷 LaTeX 模板" />
-<SiteCard title="USTBBook" url="https://github.com/htharoldht/USTBBook" desc="USTB LaTeX 书籍模板" />
-<SiteCard title="USTBThesis" url="https://github.com/Jeff-Hugh/USTBThesis" desc="北京科技大学硕博毕业设计论文 LaTeX 模板" />
-<SiteCard title="ustb-thesis" url="https://github.com/bosswnx/ustb-thesis" desc="USTB 本科毕业论文 LaTeX 模板" />
-<SiteCard title="ustb-latex-template" url="https://github.com/Ivanbeethoven/ustb-latex-template" desc="北科大硕/博士毕业论文 LaTeX 模板" />
-<SiteCard title="USTB-Beamer-Theme" url="https://github.com/koumingyang/USTB-Beamer-Theme" desc="USTB Beamer 主题" />
-<SiteCard title="USTB-tex" url="https://github.com/Dafeigy/USTB-tex" desc="USTB 报告 LaTeX 模板" />
-<SiteCard title="ustb-thesis" url="https://github.com/westye655/ustb-thesis" desc="USTB 论文 LaTeX 模板" />
-<template #outdated>
-<SiteCard title="USTBReport" url="https://github.com/htharoldht/USTBReport" desc="USTB 报告主题" badge="OUTDATED" />
-<SiteCard title="USTB-latex" url="https://github.com/qin-nz/USTB-latex" desc="USTB 本科生 LaTeX 模板" badge="OUTDATED" />
-<SiteCard title="LaTeX-Beamer-USTB" url="https://github.com/ShawniLee/LaTeX-Beamer-USTB" desc="Beamer 模板与课程 report 模板" badge="OUTDATED" />
-<SiteCard title="Latex-for-USTB-Master-Thesis" url="https://github.com/oliang/Latex-for-USTB-Master-Thesis" desc="USTB 硕士论文 Latex" badge="OUTDATED" />
-</template>
-</SiteSection>
-
 ## 其他小工具 {#tools-misc}
 
-<SiteSection subtitle="共 14 个">
+<SiteSection subtitle="共 7 个">
 <SiteCard title="Gewulab" url="https://github.com/BarnabyAlexandraBaron/Gewulab" desc="大物实验数字计算脚本" />
-<SiteCard title="USTB-Signals-Lab" url="https://github.com/LYOfficial/USTB-Signals-Lab" desc="信号与系统分析实验 Python 模拟" />
-<SiteCard title="USTBL" url="https://github.com/LYOfficial/USTBL" desc="USTB-SkyCode Minecraft Launcher" />
 <SiteCard title="discover_PLF" url="https://github.com/houjingyi-ustb/discover_PLF" desc="编程语言基础探索" />
 <SiteCard title="spack-repos" url="https://github.com/hpcde/spack-repos" desc="Spack repos for HPC&DE, USTB" />
-<SiteCard title="USTB-Term-Assignments" url="https://github.com/isHarryh/USTB-Term-Assignments" desc="USTB 课程大作业合集" />
-<SiteCard title="USTB-EmbeddedSystem-2024" url="https://github.com/exder145/USTB-EmbeddedSystem-2024" desc="24 学年大三上嵌入式实验 (STM32F10x)" />
 <template #outdated>
 <SiteCard title="FunCode-Test-USTB" url="https://github.com/jeasonstudio/FunCode-Test-USTB" desc="2016.7 USTB FunCode Games 编程考核" badge="OUTDATED" />
-<SiteCard title="OS-Work" url="https://github.com/lyfcsdo2011/OS-Work" desc="USTB 操作系统实验作业" badge="OUTDATED" />
 <SiteCard title="pic_to_wall" url="https://github.com/Albert723/pic_to_wall" desc="爬虫图片组合字符示例" badge="OUTDATED" />
 <SiteCard title="ess" url="https://github.com/moleculea/ess" desc="USTB Encyclopedic Search System" badge="OUTDATED" />
 <SiteCard title="USTB-NLP_Group" url="https://github.com/imageFish/USTB-NLP_Group" desc="USTB NLP Group" badge="OUTDATED" />
