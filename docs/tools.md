@@ -13,14 +13,14 @@ aside: false
 
 <SiteSection subtitle="共 8 个">
 <SiteCard title="USTB-All-In-One" url="https://github.com/LYOfficial/USTB-All-In-One" desc="USTB 在 Github 上的常用开源工具及资料网站统计大全" icon="/icon/icon_p.png" />
-<SiteCard title="USTB-SSO" url="https://github.com/isHarryh/USTB-SSO" desc="USTB 单点登录（SSO）身份认证实现库" />
-<SiteCard title="The-Beike" url="https://github.com/isHarryh/The-Beike" desc="大贝壳：北京科技大学校园助手（集成课表/成绩/通知等）" />
-<SiteCard title="USTB-OpenAI-Py" url="https://github.com/isHarryh/USTB-OpenAI-Py" desc="北科大 LLM 平台的 OpenAI 样式客户端" />
+<SiteCard title="USTB-SSO" url="https://github.com/isHarryh/USTB-SSO" desc="USTB 单点登录（SSO）身份认证实现库（Python&Dart）" />
+<SiteCard title="The-Beike" url="https://github.com/isHarryh/The-Beike" desc="大贝壳：北京科技大学校园助手（集成课表/选课/成绩/校园网等功能）" />
 <template #outdated>
 <SiteCard title="HelloUSTB" url="https://github.com/genshen/HelloUSTB" desc="USTB 校园 Android App" badge="OUTDATED" />
 <SiteCard title="ustbclass" url="https://github.com/kotoyuuko/ustbclass" desc="Laravel 开发的课程表日历自动推送系统，北科大专用" badge="OUTDATED" />
 <SiteCard title="USTB-TeachSystem-API" url="https://github.com/jeasonstudio/USTB-TeachSystem-API" desc="教务管理系统接口（非官方）" badge="OUTDATED" />
 <SiteCard title="ustb_sso_server" url="https://github.com/dashjay/ustb_sso_server" desc="USTB 单点登录系统（完全开源）" badge="OUTDATED" />
+<SiteCard title="USTB-OpenAI-Py" url="https://github.com/isHarryh/USTB-OpenAI-Py" desc="北科大 LLM 平台的 OpenAI 样式客户端" />
 </template>
 </SiteSection>
 
@@ -65,9 +65,8 @@ aside: false
 
 ## 教务 / 成绩 / 课表 {#tools-academic}
 
-<SiteSection subtitle="共 14 个">
-<SiteCard title="USTB-OES-JS" url="https://github.com/isHarryh/USTB-OES-JS" desc="锐格平台和中国大学 MOOC 参考答案辅助脚本" />
-<SiteCard title="USTB-Awesome-JS" url="https://github.com/isHarryh/USTB-Awesome-JS" desc="锐格 / 慕课 / 超星 / 抢课 等线上平台辅助脚本合集（油猴）" />
+<SiteSection subtitle="共 13 个">
+<SiteCard title="USTB-Awesome-JS" url="https://github.com/isHarryh/USTB-Awesome-JS" desc="锐格 / 慕课 / 超星等线上平台辅助脚本合集（油猴）" />
 <SiteCard title="USTB-QGXF" url="https://github.com/isHarryh/USTB-QGXF" desc="强国先锋系列课程自动代理（国防教育/DXPX）" />
 <SiteCard title="USTB-NoStop" url="https://github.com/LYOfficial/USTB-NoStop" desc="视频播放网站反复弹窗导致视频播放异常的解决方案" />
 <SiteCard title="UTSB-ScoreRank" url="https://github.com/Avioleter/UTSB-ScoreRank" desc="USTB 教务系统油猴脚本：自动显示成绩排名、计算加权平均分、一键导出 Excel" />
@@ -116,10 +115,11 @@ aside: false
 
 ## 其他小工具 {#tools-misc}
 
-<SiteSection subtitle="共 7 个">
+<SiteSection subtitle="共 8 个">
 <SiteCard title="Gewulab" url="https://github.com/BarnabyAlexandraBaron/Gewulab" desc="大物实验数字计算脚本" />
 <SiteCard title="discover_PLF" url="https://github.com/houjingyi-ustb/discover_PLF" desc="编程语言基础探索" />
 <SiteCard title="spack-repos" url="https://github.com/hpcde/spack-repos" desc="Spack repos for HPC&DE, USTB" />
+<SiteCard title="AnyShare-Unofficial" url="https://github.com/isHarryh/AnyShare-Unofficial" desc="适用于北科云盘的 API 库（Python）" />
 <template #outdated>
 <SiteCard title="FunCode-Test-USTB" url="https://github.com/jeasonstudio/FunCode-Test-USTB" desc="2016.7 USTB FunCode Games 编程考核" badge="OUTDATED" />
 <SiteCard title="pic_to_wall" url="https://github.com/Albert723/pic_to_wall" desc="爬虫图片组合字符示例" badge="OUTDATED" />
