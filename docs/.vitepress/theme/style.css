@@ -32,6 +32,47 @@
   margin: 0.25rem 0 1rem;
 }
 
+.site-section-outdated {
+  margin-top: 12px;
+}
+
+.site-section-outdated-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin: 0 0 10px;
+  color: var(--vp-c-text-3);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.site-section-outdated-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.site-section-outdated-toggle::marker {
+  content: '';
+}
+
+.site-section-outdated-toggle span {
+  display: block;
+  font-size: 18px;
+  line-height: 1;
+  transform: rotate(90deg);
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.site-section-outdated-toggle:hover {
+  color: var(--vp-c-text-1);
+}
+
+.site-section-outdated[open] .site-section-outdated-toggle span {
+  transform: rotate(270deg);
+}
+
 /* 网格：默认 3 列（卡片足够宽以容纳标题+描述） */
 .site-grid {
   display: grid;

@@ -97,10 +97,26 @@ USTB-All-In-One/
 图标加载顺序：
 
 1. `icon` 指定的本地图片。
-2. 根据目标网址域名请求远程 favicon。
-3. 使用 `docs/public/icon/ustb.png` 兜底。
+2. GitHub 链接使用仓库所有者（用户或组织）的 GitHub 头像。
+3. 其他网址根据目标域名请求远程 favicon。
+4. 使用 `docs/public/icon/ustb.png` 兜底。
 
 新增本地图标时，应放在 `docs/public/img/`，引用形式为 `/img/文件名`。不要把图片放到仓库根目录的临时文件夹中。
+
+GitHub 项目若已有自己的项目图标，可继续通过 `icon` 显式指定；显式图标始终优先于所有者头像。
+
+最后提交时间已达到四年的项目使用 `badge="OUTDATED"` 标记，并放入当前 `SiteSection` 的 `outdated` 插槽。页面默认折叠这些卡片：
+
+```vue
+<template #outdated>
+  <SiteCard
+    title="旧项目"
+    url="https://github.com/example/old-project"
+    desc="项目简介"
+    badge="OUTDATED"
+  />
+</template>
+```
 
 ### 3.2 新增章节
 

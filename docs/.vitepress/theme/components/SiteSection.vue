@@ -11,5 +11,13 @@ defineProps({
     <SiteGrid>
       <slot />
     </SiteGrid>
+    <details v-if="$slots.outdated" class="site-section-outdated">
+      <summary class="site-section-outdated-toggle" aria-label="展开或收起过期项目">
+        <span aria-hidden="true">&gt;</span>
+      </summary>
+      <SiteGrid>
+        <slot name="outdated" />
+      </SiteGrid>
+    </details>
   </section>
 </template>
