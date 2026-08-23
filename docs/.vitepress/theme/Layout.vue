@@ -24,40 +24,65 @@ const {
 const route = useRoute()
 watch(() => route.path, closeSidebar)
 
-const pageViewCount = ref(null)
-const pageViewFailed = ref(false)
-let hasMounted = false
+const helpCount = ref(null)
+const helpCountFailed = ref(false)
 
-async function recordPageView() {
+function updateHelpCount(data) {
+  if (!Number.isSafeInteger(data.count) || data.count < 0) {
+    throw new Error('Invalid help count')
+  }
+
+  helpCount.value = Math.max(helpCount.value ?? 0, data.count)
+  helpCountFailed.value = false
+}
+
+async function fetchHelpCount() {
   try {
     const response = await fetch('/api/page-view', {
-      method: 'POST',
       headers: { Accept: 'application/json' }
     })
 
     if (!response.ok) throw new Error(`HTTP ${response.status}`)
-
-    const data = await response.json()
-    if (!Number.isSafeInteger(data.count) || data.count < 0) {
-      throw new Error('Invalid page view count')
-    }
-
-    pageViewCount.value = Math.max(pageViewCount.value ?? 0, data.count)
-    pageViewFailed.value = false
+    updateHelpCount(await response.json())
   } catch (error) {
-    pageViewFailed.value = true
-    console.warn('Failed to record page view:', error)
+    helpCountFailed.value = true
+    console.warn('Failed to fetch help count:', error)
   }
 }
 
-onMounted(() => {
-  hasMounted = true
-  recordPageView()
-})
+async function recordHelpClick() {
+  try {
+    const response = await fetch('/api/page-view', {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      keepalive: true
+    })
 
-watch(() => route.path, () => {
-  if (hasMounted) recordPageView()
-})
+    if (!response.ok) throw new Error(`HTTP ${response.status}`)
+
+    updateHelpCount(await response.json())
+  } catch (error) {
+    helpCountFailed.value = true
+    console.warn('Failed to record help click:', error)
+  }
+}
+
+function isNavigableLink(link) {
+  const href = link.getAttribute('href')?.trim().toLowerCase()
+  return Boolean(href && href !== '#' && !href.startsWith('javascript:') && !link.hasAttribute('download'))
+}
+
+function recordNavigationClick(event) {
+  const isPrimaryClick = event.type === 'click' && event.button === 0
+  const isMiddleClick = event.type === 'auxclick' && event.button === 1
+  if ((!isPrimaryClick && !isMiddleClick) || !(event.target instanceof Element)) return
+
+  const link = event.target.closest('a[href]')
+  const guideTocItem = event.target.closest('.guide-reader-toc-section-link, .guide-reader-toc-section li > button')
+  if ((link && isNavigableLink(link)) || (!link && guideTocItem)) void recordHelpClick()
+}
+
+onMounted(fetchHelpCount)
 
 const currentMenuText = computed(() => {
   const section = route.path.split('/').filter(Boolean)[0] || ''
@@ -86,7 +111,13 @@ function toggleSidebar() {
 </script>
 
 <template>
-  <div v-if="frontmatter.layout !== false" class="Layout" :class="frontmatter.pageClass">
+  <div
+    v-if="frontmatter.layout !== false"
+    class="Layout"
+    :class="frontmatter.pageClass"
+    @click.capture="recordNavigationClick"
+    @auxclick.capture="recordNavigationClick"
+  >
     <slot name="layout-top" />
     <VPSkipLink />
     <VPBackdrop class="backdrop" :show="isSidebarOpen" @click="closeSidebar" />
@@ -131,7 +162,7 @@ function toggleSidebar() {
       <template #home-hero-info><slot name="home-hero-info" /></template>
       <template #home-hero-info-after><slot name="home-hero-info-after" /></template>
       <template #home-hero-actions-after>
-        <PageViewCounter :count="pageViewCount" :failed="pageViewFailed" />
+        <PageViewCounter :count="helpCount" :failed="helpCountFailed" />
         <slot name="home-hero-actions-after" />
       </template>
       <template #home-hero-image><slot name="home-hero-image" /></template>

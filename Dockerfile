@@ -23,7 +23,7 @@ RUN npm run docs:build
 # ---- Stage 2: Serve the static site with Nginx -----------------------------
 FROM nginx:1.27-alpine AS runtime
 
-# The counter uses Node's built-in HTTP server and has no third-party runtime
+# The help counter uses Node's built-in HTTP server and has no third-party runtime
 # dependencies. It runs beside Nginx inside the same container.
 RUN apk add --no-cache nodejs
 
@@ -39,10 +39,10 @@ COPY --from=builder /app/docs/.vitepress/dist /usr/share/nginx/html
 # Expose the HTTP port
 EXPOSE 80
 
-# Persist the counter independently from image rebuilds and container updates.
+# Persist the help count independently from image rebuilds and container updates.
 VOLUME ["/data"]
 
-# Verify both Nginx and the page-view process through the internal API route.
+# Verify both Nginx and the help counter process through the internal API route.
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
     CMD wget --quiet --tries=1 --spider http://localhost/api/page-view/health || exit 1
 

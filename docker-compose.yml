@@ -21,7 +21,7 @@ services:
       retries: 3
       start_period: 10s
     volumes:
-      # Named volume keeps the accumulated page views across rebuilds/redeploys.
+      # Named volume keeps the accumulated help count across rebuilds/redeploys.
       - page-view-data:/data
     # Resource caps keep the static site well within the free tier on most hosts
     deploy:

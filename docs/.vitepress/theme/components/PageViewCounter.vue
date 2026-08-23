@@ -33,7 +33,7 @@ defineProps({
         role="status"
         aria-live="polite"
       >
-        已累计帮助 {{ failed ? '--' : (count ?? '…') }} 人
+        已累计帮助 {{ failed ? '--' : (count ?? '…') }} 人次
       </span>
     </div>
   </div>

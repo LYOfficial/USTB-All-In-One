@@ -60,8 +60,18 @@ createServer(async (request, response) => {
     return
   }
 
+  if (request.method === 'GET') {
+    try {
+      sendJson(response, 200, { count: await readCount() })
+    } catch (error) {
+      console.error('Failed to read help count:', error)
+      sendJson(response, 500, { error: 'Failed to read help count' })
+    }
+    return
+  }
+
   if (request.method !== 'POST') {
-    response.setHeader('Allow', 'POST')
+    response.setHeader('Allow', 'GET, POST')
     sendJson(response, 405, { error: 'Method not allowed' })
     return
   }
@@ -69,9 +79,9 @@ createServer(async (request, response) => {
   try {
     sendJson(response, 200, { count: await incrementCount() })
   } catch (error) {
-    console.error('Failed to update page view count:', error)
-    sendJson(response, 500, { error: 'Failed to update page view count' })
+    console.error('Failed to update help count:', error)
+    sendJson(response, 500, { error: 'Failed to update help count' })
   }
 }).listen(port, '127.0.0.1', () => {
-  console.log(`Page view server listening on 127.0.0.1:${port}`)
+  console.log(`Help counter server listening on 127.0.0.1:${port}`)
 })

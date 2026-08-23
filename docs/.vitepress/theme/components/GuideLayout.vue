@@ -67,21 +67,7 @@ function updateReadingState() {
   }
 }
 
-async function recordGuideHelp() {
-  try {
-    await fetch('/api/page-view', {
-      method: 'POST',
-      headers: { Accept: 'application/json' },
-      keepalive: true
-    })
-  } catch {
-    // 本地静态预览未配置统计接口时，目录跳转仍应正常可用。
-  }
-}
-
 async function jumpTo(id) {
-  void recordGuideHelp()
-
   if (isMobileLayout.value) {
     mobileTocOpen.value = false
     await nextTick()

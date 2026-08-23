@@ -1,18 +1,18 @@
 # USTB-All-In-One 详细维护与部署文档
 
-本文档面向项目维护者、前端开发者和服务器管理员，记录站点结构、数据维护、本地开发、活动同步、浏览量统计、Docker 部署、备份升级与常见问题。
+本文档面向项目维护者、前端开发者和服务器管理员，记录站点结构、数据维护、本地开发、活动同步、Docker 部署、备份升级与常见问题。
 
 普通内容贡献者只需阅读[仓库首页的 README](https://github.com/LYOfficial/USTB-All-In-One#readme)。
 
 ## 1. 项目概览
 
-USTB-All-In-One 是一个基于 VitePress 和 Vue 3 的导航站。主体内容在构建时生成静态 HTML，由 Nginx 提供访问；全站浏览量通过同一容器内的轻量 Node.js 服务记录，并写入 Docker 持久化卷。
+USTB-All-In-One 是一个基于 VitePress 和 Vue 3 的导航站。主体内容在构建时生成静态 HTML，由 Nginx 提供访问。
 
 站点包含首页和五个分区页：
 
 | 页面 | 访问路径 | 源文件 | 主要内容 |
 | --- | --- | --- | --- |
-| 首页 | `/` | `docs/index.md` | Hero、累计帮助人数、每周校园活动 |
+| 首页 | `/` | `docs/index.md` | Hero、每周校园活动 |
 | 学校官方网站 | `/official` | `docs/official.md` | 学校官方服务与院系站点 |
 | 开源工具 | `/tools` | `docs/tools.md` | 校友开源工具与脚本 |
 | 学习资料 | `/materials` | `docs/materials.md` | 课程资料、模板与复习内容 |
@@ -43,7 +43,7 @@ USTB-All-In-One/
 │       │   └── qqGroups.js            # QQ 群数据
 │       └── theme/
 │           ├── index.js               # 自定义主题入口与全局组件注册
-│           ├── Layout.vue             # 全局布局、侧栏和浏览量上报
+│           ├── Layout.vue             # 全局布局与侧栏
 │           ├── style.css               # 全局卡片、首页和响应式样式
 │           └── components/
 │               ├── SiteCard.vue       # 通用站点卡片
@@ -51,15 +51,11 @@ USTB-All-In-One/
 │               ├── SiteSection.vue    # 分区容器
 │               ├── ClubCard.vue       # 社团卡片
 │               ├── QqGroupCard.vue    # QQ 群卡片
-│               ├── WeeklyActivities.vue # 每周校园活动
-│               └── PageViewCounter.vue  # 首页累计帮助人数展示
+│               └── WeeklyActivities.vue # 每周校园活动
 ├── scripts/
 │   └── scrape-activities.mjs          # 校园活动抓取与图片缓存脚本
-├── server/
-│   └── page-view-server.mjs           # 浏览量计数 API
 ├── docker/
-│   ├── nginx.conf                     # 静态资源、API 反代与缓存配置
-│   └── 20-start-page-view-server.sh   # 容器内启动计数服务
+│   └── nginx.conf                     # 静态资源、API 反代与缓存配置
 ├── Dockerfile                         # VitePress 构建与 Nginx 运行镜像
 ├── docker-compose.yml                 # 端口、资源限制与持久化卷
 ├── package.json                       # npm 命令与依赖
@@ -173,55 +169,26 @@ git diff -- docs/.vitepress/data/activities.js docs/public/activity
 
 | 组件 | 职责 |
 | --- | --- |
-| `Layout.vue` | 包装 VitePress 默认布局、移动端侧栏、全站页面浏览量上报 |
+| `Layout.vue` | 包装 VitePress 默认布局与移动端侧栏 |
 | `SiteCard.vue` | 通用链接卡片与图标 fallback |
 | `SiteGrid.vue` | 3 / 2 / 1 列响应式布局 |
 | `SiteSection.vue` | 分区副标题与卡片容器 |
 | `ClubCard.vue` | 纯文本社团卡片 |
 | `QqGroupCard.vue` | QQ 群头像、群号与加群入口 |
 | `WeeklyActivities.vue` | 首页活动列表 |
-| `PageViewCounter.vue` | 首页累计帮助人数展示，不负责写入数据 |
-| `GuideLayout.vue` | 新人引领的阅读目录；手动点击章节标题会增加累计帮助人数 |
+| `GuideLayout.vue` | 新人引领的阅读目录 |
 
 全局样式位于 `docs/.vitepress/theme/style.css`。修改时至少检查桌面端、平板宽度和手机端三种布局，以及浅色、深色两种主题。
 
-## 5. 全站浏览量统计
+## 5. 本地开发与检查
 
-浏览量统计流程：
-
-```text
-访问任意页面或站内切换页面
-        ↓
-Layout.vue POST /api/page-view
-        ↓
-Nginx 转发到 127.0.0.1:3000/page-view
-        ↓
-page-view-server.mjs 顺序更新计数
-        ↓
-/data/page-views.json
-```
-
-统计规则：
-
-- 直接打开或刷新首页、官方站点、工具、资料、社团、社群、新人引领页面都会计数。
-- 在站内切换到另一个页面也会计数。
-- 同一页面内切换章节锚点不会重复计数。
-- 在新人引领中手动点击目录标题会额外计数；仅滚动阅读、展开或收起目录不会计数。
-- 这是页面浏览量，不是去重后的独立访客数。
-
-计数服务只监听容器内的 `127.0.0.1:3000`，外部请求统一经过 Nginx。写入使用队列和临时文件替换，避免并发请求互相覆盖。
-
-计数文件必须挂载到持久化存储。Compose 默认使用名为 `ustb-all-in-one-page-views` 的本地 Docker 卷，将其挂载到容器 `/data`。
-
-## 6. 本地开发与检查
-
-### 6.1 环境要求
+### 5.1 环境要求
 
 - Node.js 20 或更高版本。
 - npm。
 - 完整容器测试需要 Docker 与 Docker Compose。
 
-### 6.2 安装与开发
+### 5.2 安装与开发
 
 ```bash
 git clone https://github.com/LYOfficial/USTB-All-In-One.git
@@ -232,9 +199,7 @@ npm run docs:dev
 
 VitePress 开发服务器默认地址为 `http://localhost:5173`。
 
-单独运行 `npm run docs:dev` 时没有 Nginx 和浏览量 API，因此累计帮助人数可能显示为 `--`，这不影响页面内容开发。需要测试完整统计链路时，请使用 Docker 部署方式。
-
-### 6.3 构建与预览
+### 5.3 构建与预览
 
 ```bash
 npm run docs:build
@@ -251,18 +216,18 @@ npm run docs:build
 git diff --check
 ```
 
-### 6.4 内容检查清单
+### 5.4 内容检查清单
 
 - 所有新增链接均可访问。
 - Markdown 标题层级正确。
 - 新章节已经同步更新 sidebar。
 - 卡片在浅色和深色模式下均可阅读。
 - 手机端没有横向滚动或按钮溢出。
-- 没有提交 `dist`、缓存、日志或浏览量数据文件。
+- 没有提交 `dist`、缓存或日志文件。
 
-## 7. Docker 部署
+## 6. Docker 部署
 
-### 7.1 Compose 部署
+### 6.1 Compose 部署
 
 ```bash
 docker compose up -d --build
@@ -283,53 +248,27 @@ docker compose restart ustb-site
 docker compose down
 ```
 
-`docker compose down` 不会删除浏览量卷。不要执行 `docker compose down -v`，除非明确希望删除累计数据。
-
-### 7.2 直接运行镜像
+### 6.2 直接运行镜像
 
 ```bash
 docker build -t ustb-all-in-one .
-docker volume create ustb-all-in-one-page-views
 docker run -d \
   --name ustb-all-in-one \
   --restart unless-stopped \
   -p 2000:80 \
-  -v ustb-all-in-one-page-views:/data \
   ustb-all-in-one
 ```
 
-### 7.3 反向代理建议
+### 6.3 反向代理建议
 
-生产环境建议让主机上的 Nginx、Caddy 或其他网关负责 HTTPS，然后转发到 `127.0.0.1:2000`。不要直接暴露容器内的 3000 端口，浏览量服务只应通过站点 Nginx 访问。
+生产环境建议让主机上的 Nginx、Caddy 或其他网关负责 HTTPS，然后转发到 `127.0.0.1:2000`。
 
 代理层需要允许：
 
 - 静态页面和 `/assets/` 资源访问。
-- `POST /api/page-view` 请求。
 - WebSocket 不是生产站点的必要条件。
 
-## 8. 数据备份与升级
-
-### 8.1 查看浏览量数据
-
-```bash
-docker compose exec ustb-site cat /data/page-views.json
-```
-
-### 8.2 备份命名卷
-
-可以将卷内容备份到服务器当前目录：
-
-```bash
-docker run --rm \
-  -v ustb-all-in-one-page-views:/data:ro \
-  -v "$PWD":/backup \
-  alpine sh -c 'tar czf /backup/page-view-data.tar.gz -C /data .'
-```
-
-备份文件应妥善保存，不要提交到仓库。
-
-### 8.3 更新站点
+## 7. 更新站点
 
 ```bash
 git pull
@@ -337,15 +276,14 @@ docker compose up -d --build
 docker compose ps
 ```
 
-重新构建镜像和替换容器不会删除命名卷。更新完成后应访问任意页面，确认页面正常打开，并检查累计帮助人数是否继续增长。
+更新完成后应访问任意页面，确认页面正常打开。
 
-## 9. Nginx 与容器说明
+## 8. Nginx 与容器说明
 
 镜像采用多阶段构建：
 
 1. `node:20-alpine` 安装依赖并构建 VitePress。
 2. `nginx:1.27-alpine` 提供静态页面。
-3. 运行镜像额外安装 Node.js，用于启动无第三方依赖的计数服务。
 
 `docker/nginx.conf` 负责：
 
@@ -353,34 +291,16 @@ docker compose ps
 - `/assets/` 指纹资源的长期缓存。
 - HTML 与普通路径访问。
 - gzip 压缩。
-- `/api/page-view` 反向代理。
-- 计数服务健康检查。
 
-容器健康检查会请求 `/api/page-view/health`，因此可以同时确认 Nginx 和计数进程正常工作。
-
-## 10. 技术栈
+## 9. 技术栈
 
 - VitePress 1.6：静态站点生成与 Markdown 渲染。
 - Vue 3：自定义主题和交互组件。
-- Node.js：构建、活动抓取和浏览量计数服务。
+- Node.js：构建与活动抓取。
 - Nginx 1.27：生产静态资源服务与 API 反向代理。
 - Docker / Docker Compose：构建、运行和持久化卷管理。
 
-## 11. 常见问题
-
-### 首页累计帮助人数显示 `--`
-
-检查：
-
-1. 是否仅运行了 VitePress 开发或预览服务。
-2. 容器是否健康：`docker compose ps`。
-3. 日志中计数服务是否成功启动：`docker compose logs ustb-site`。
-4. `/data` 是否可写并已正确挂载。
-5. 外层反向代理是否允许 `POST /api/page-view`。
-
-### 重部署后浏览量归零
-
-确认当前容器仍挂载 `ustb-all-in-one-page-views:/data`，并检查是否执行过带 `-v` 的 Compose 删除命令或手动删除过 Docker 卷。
+## 10. 常见问题
 
 ### 新页面能打开但侧栏没有章节
 
