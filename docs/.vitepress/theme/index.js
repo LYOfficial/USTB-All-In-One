@@ -7,6 +7,7 @@ import SiteSection from './components/SiteSection.vue'
 import QqGroupCard from './components/QqGroupCard.vue'
 import ClubCard from './components/ClubCard.vue'
 import WeeklyActivities from './components/WeeklyActivities.vue'
+import GuideLayout from './components/GuideLayout.vue'
 
 export default {
   extends: DefaultTheme,
@@ -18,5 +19,6 @@ export default {
     app.component('QqGroupCard', QqGroupCard)
     app.component('ClubCard', ClubCard)
     app.component('WeeklyActivities', WeeklyActivities)
+    app.component('GuideLayout', GuideLayout)
   }
 }

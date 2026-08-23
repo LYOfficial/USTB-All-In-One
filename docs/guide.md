@@ -4,6 +4,7 @@ aside: false
 pageClass: guide-page
 ---
 
+<GuideLayout>
 <div class="guide-article">
 
 本网站主要供暑期招生期间使用，开学后如果觉得此网站仍比较有用，可以将网站保存到本地，日后继续查看，但是更建议的是向老师和导师，辅导员，小班主任，以及周围同学寻找帮助。
@@ -17,6 +18,7 @@ pageClass: guide-page
 - 08-23：宿舍住宿条件中更新床垫采购信息，更换一批链接
 
 ---
+<div class="guide-inline-toc" aria-hidden="true">
 **目录**
 - [北京科技大学新生常见问题解答](#北京科技大学新生常见问题解答)
   - [写在前面](#写在前面)
@@ -103,6 +105,7 @@ pageClass: guide-page
   - [学长学姐的话（长期征集中！）](#学长学姐的话长期征集中)
   - [文档说明](#文档说明)
 
+</div>
 # 北京科技大学新生常见问题解答
 
 ## 写在前面
@@ -638,9 +641,5 @@ pageClass: guide-page
 - 本文中所写的内容有过时的可能。如果文中所述内容与官方文件及新版学生手册中的内容不一致，请**以新版学生手册、最新文件或辅导员通知为准**。
 - 版权所有，转载请注明出处。
 
-<div class="guide-attribution">
-  <p>作者：chirifc</p>
-  <p><a href="https://chirifc.github.io">阅读原文</a><span>本文已授权开源</span></p>
 </div>
-
-</div>
+</GuideLayout>

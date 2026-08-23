@@ -801,3 +801,333 @@
     margin-left: -2px;
   }
 }
+
+/* 新人引领：仿 vUSTB /guide 的目录侧栏 + 正文双栏阅读布局。 */
+.guide-page .VPDoc {
+  padding: 48px 28px 80px;
+}
+
+.guide-page .VPDoc .container,
+.guide-page .VPDoc .content,
+.guide-page .VPDoc .content-container,
+.guide-page .vp-doc {
+  max-width: none;
+}
+
+.guide-page .VPDoc .container {
+  width: min(1440px, 100%) !important;
+  max-width: 1440px !important;
+}
+
+.guide-page .VPDoc .content,
+.guide-page .VPDoc .content-container,
+.guide-page .VPDoc .main,
+.guide-page .vp-doc {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.guide-page .vp-doc {
+  color: var(--vp-c-text-2);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.guide-inline-toc {
+  display: none;
+}
+
+.guide-reader-layout {
+  display: grid;
+  grid-template-columns: 272px minmax(0, 1fr);
+  gap: clamp(36px, 5vw, 76px);
+  align-items: start;
+}
+
+.guide-reader-sidebar {
+  position: sticky;
+  top: calc(var(--vp-nav-height) + 22px);
+  height: calc(100vh - var(--vp-nav-height) - 42px);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.guide-reader-sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+  padding: 6px 16px 16px 2px;
+  border-right: 1px solid var(--vp-c-divider);
+}
+
+.guide-reader-sidebar-top {
+  padding: 3px 8px 15px;
+}
+
+.guide-reader-sidebar-title {
+  margin: 0 0 13px;
+  color: var(--vp-c-text-1);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.guide-reader-progress {
+  display: grid;
+  gap: 7px;
+  color: var(--vp-c-text-3);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.guide-reader-progress-track {
+  display: block;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--vp-c-bg-soft);
+}
+
+.guide-reader-progress-bar {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--vp-c-brand-1), #22c55e 65%, #eab308);
+  transition: width 0.18s ease;
+}
+
+.guide-reader-toc {
+  display: grid;
+  flex: 1;
+  min-height: 0;
+  gap: 3px;
+  overflow-y: auto;
+  scrollbar-color: var(--vp-c-divider) transparent;
+}
+
+.guide-reader-toc::-webkit-scrollbar {
+  width: 4px;
+}
+
+.guide-reader-toc::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--vp-c-divider);
+}
+
+.guide-reader-toc-section {
+  border-radius: 9px;
+}
+
+.guide-reader-toc-section.is-active {
+  background: var(--vp-c-brand-soft);
+}
+
+.guide-reader-toc-section-head {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.guide-reader-toc-section-link,
+.guide-reader-toc-toggle,
+.guide-reader-toc-section li button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.guide-reader-toc-section-link {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 5px 8px 8px;
+  border-radius: 8px;
+  color: var(--vp-c-text-2);
+  background: transparent;
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+.guide-reader-toc-section-link span {
+  flex-shrink: 0;
+  color: var(--vp-c-text-3);
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.67rem;
+  font-weight: 700;
+}
+
+.guide-reader-toc-section-link b {
+  overflow: hidden;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.guide-reader-toc-section.is-active .guide-reader-toc-section-link,
+.guide-reader-toc-section.is-active .guide-reader-toc-section-link span {
+  color: var(--vp-c-brand-1);
+}
+
+.guide-reader-toc-section-link:hover,
+.guide-reader-toc-section li button:hover {
+  color: var(--vp-c-brand-1);
+  background: var(--vp-c-bg-soft);
+}
+
+.guide-reader-toc-toggle {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border-radius: 6px;
+  color: var(--vp-c-text-3);
+  background: transparent;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.guide-reader-toc-toggle:hover {
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg-soft);
+}
+
+.guide-reader-toc-section ul {
+  display: grid;
+  gap: 1px;
+  margin: 2px 0 7px 18px;
+  padding: 0 0 0 11px;
+  border-left: 1px dashed var(--vp-c-divider);
+  list-style: none;
+}
+
+.guide-reader-toc-section li button {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  padding: 5px 7px;
+  border-radius: 6px;
+  color: var(--vp-c-text-3);
+  background: transparent;
+  font-size: 0.74rem;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.guide-reader-toc-section li button.is-active {
+  color: var(--vp-c-brand-1);
+  background: color-mix(in srgb, var(--vp-c-brand-1) 12%, transparent);
+  font-weight: 600;
+}
+
+.guide-reader-sidebar-footer {
+  display: grid;
+  gap: 5px;
+  margin-top: auto;
+  padding: 16px 8px 2px;
+  border-top: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-3);
+  font-size: 0.74rem;
+  line-height: 1.45;
+}
+
+.guide-reader-sidebar-footer p {
+  margin: 0;
+  color: var(--vp-c-text-2);
+}
+
+.guide-reader-sidebar-footer a {
+  width: fit-content;
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.guide-reader-sidebar-footer a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.guide-reader-content {
+  min-width: 0;
+  max-width: 1050px;
+}
+
+.guide-page .vp-doc .guide-reader-content .guide-article {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.guide-reader-content h1,
+.guide-reader-content h2,
+.guide-reader-content h3 {
+  scroll-margin-top: calc(var(--vp-nav-height) + 22px);
+}
+
+.guide-reader-content h1 {
+  margin: 0 0 1.5rem;
+}
+
+.guide-reader-content h2:first-of-type {
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 960px) {
+  .guide-page .VPDoc {
+    padding: 32px 24px 60px;
+  }
+
+  .guide-reader-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .guide-reader-sidebar {
+    position: static;
+    height: auto;
+    max-height: none;
+  }
+
+  .guide-reader-sidebar-inner {
+    height: auto;
+    min-height: 0;
+    padding: 16px;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 12px;
+    background: var(--vp-c-bg-soft);
+  }
+
+  .guide-reader-sidebar-footer {
+    margin-top: 16px;
+  }
+
+  .guide-reader-toc {
+    overflow: visible;
+  }
+
+  .guide-reader-content {
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .guide-page .VPDoc {
+    padding: 24px 16px 48px;
+  }
+
+  .guide-reader-sidebar-inner {
+    padding: 14px;
+  }
+
+  .guide-reader-toc-section-link b,
+  .guide-reader-toc-section li button {
+    white-space: normal;
+  }
+}
