@@ -44,6 +44,9 @@
 | 学习资料 | `docs/materials.md` |
 | 校内社团 | `docs/.vitepress/data/clubs.js` |
 | 同好社群 | `docs/.vitepress/data/qqGroups.js` |
+| 新人引领 | `docs/guide.md` |
+
+“新人引领”正文维护在 `docs/guide.md`：保持既有的 Markdown 标题层级（`##` 为章节、`###` 为小节），页面会自动生成桌面端与移动端快捷目录和阅读进度。请勿修改文件中的 `<GuideLayout>` 包裹标签；侧栏交互与布局由主题组件维护。
 
 添加普通站点或项目时，可以在对应章节中复制并修改一行卡片：
 

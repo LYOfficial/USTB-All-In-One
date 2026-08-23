@@ -1,12 +1,19 @@
 <script setup>
-import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
+import { nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
 const contentRef = ref(null)
 const sections = ref([])
 const progress = ref(0)
 const activeId = ref('')
 const openSections = ref(new Set())
+const mobileTocOpen = ref(false)
+const isMobileLayout = ref(false)
 let resizeObserver
+
+function updateMobileLayout() {
+  isMobileLayout.value = window.matchMedia('(max-width: 960px)').matches
+  if (!isMobileLayout.value) mobileTocOpen.value = false
+}
 
 function headingText(element) {
   const clone = element.cloneNode(true)
@@ -60,7 +67,14 @@ function updateReadingState() {
   }
 }
 
-function jumpTo(id) {
+async function jumpTo(id) {
+  if (isMobileLayout.value) {
+    mobileTocOpen.value = false
+    await nextTick()
+    document.getElementById(id)?.scrollIntoView({ behavior: 'auto', block: 'start' })
+    return
+  }
+
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 
@@ -71,12 +85,24 @@ function toggleSection(id) {
   openSections.value = next
 }
 
+function openMobileToc() {
+  openSections.value = new Set(sections.value.map((section) => section.id))
+  mobileTocOpen.value = true
+}
+
+watch(mobileTocOpen, (isOpen) => {
+  if (!isMobileLayout.value) return
+  document.body.style.overflow = isOpen ? 'hidden' : ''
+})
+
 onMounted(async () => {
   await nextTick()
   buildOutline()
   updateReadingState()
+  updateMobileLayout()
   window.addEventListener('scroll', updateReadingState, { passive: true })
   window.addEventListener('resize', updateReadingState)
+  window.addEventListener('resize', updateMobileLayout)
   resizeObserver = new ResizeObserver(updateReadingState)
   if (contentRef.value) resizeObserver.observe(contentRef.value)
 })
@@ -84,17 +110,41 @@ onMounted(async () => {
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', updateReadingState)
   window.removeEventListener('resize', updateReadingState)
+  window.removeEventListener('resize', updateMobileLayout)
+  document.body.style.overflow = ''
   resizeObserver?.disconnect()
 })
 </script>
 
 <template>
   <div class="guide-reader">
+    <button
+      class="guide-reader-mobile-toggle"
+      type="button"
+      :aria-expanded="mobileTocOpen"
+      aria-controls="guide-reader-mobile-toc"
+      aria-label="展开文章目录"
+      @click="openMobileToc"
+    >
+      <span aria-hidden="true">☰</span>
+      <span>目录</span>
+    </button>
+
+    <div v-if="mobileTocOpen" class="guide-reader-mobile-backdrop" @click="mobileTocOpen = false" />
+
     <div class="guide-reader-layout">
-      <aside class="guide-reader-sidebar" aria-label="文章目录">
+      <aside
+        id="guide-reader-mobile-toc"
+        class="guide-reader-sidebar"
+        :class="{ 'is-open': mobileTocOpen }"
+        aria-label="文章目录"
+      >
         <div class="guide-reader-sidebar-inner">
           <div class="guide-reader-sidebar-top">
-            <p class="guide-reader-sidebar-title">文章目录</p>
+            <div class="guide-reader-sidebar-heading">
+              <p class="guide-reader-sidebar-title">文章目录</p>
+              <button class="guide-reader-mobile-close" type="button" aria-label="收起文章目录" @click="mobileTocOpen = false">×</button>
+            </div>
             <div class="guide-reader-progress">
               <div class="guide-reader-progress-track" aria-hidden="true">
                 <span class="guide-reader-progress-bar" :style="{ width: `${Math.round(progress * 100)}%` }" />
