@@ -66,7 +66,8 @@ const currentMenuText = computed(() => {
     tools: '开源工具',
     materials: '学习资料',
     clubs: '校内社团',
-    communities: '同好社群'
+    communities: '同好社群',
+    guide: '新人引领'
   }[section] || '首页'
 })
 

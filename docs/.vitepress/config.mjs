@@ -87,7 +87,8 @@ export default defineConfig({
       { text: '开源工具', link: '/tools' },
       { text: '学习资料', link: '/materials' },
       { text: '校内社团', link: '/clubs' },
-      { text: '同好社群', link: '/communities' }
+      { text: '同好社群', link: '/communities' },
+      { text: '新人引领', link: '/guide' }
     ],
 
     // 站点 Logo：白天用 original_p.png，黑夜用 monochrome_p.png

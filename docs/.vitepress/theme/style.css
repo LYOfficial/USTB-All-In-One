@@ -609,3 +609,195 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* 新人引领：长文阅读排版 */
+.guide-page .VPDoc {
+  padding: 42px 24px 76px;
+}
+
+.guide-page .VPDoc .container,
+.guide-page .VPDoc .content {
+  max-width: 980px;
+}
+
+.guide-page .vp-doc {
+  max-width: 860px;
+  color: var(--vp-c-text-2);
+  font-size: 0.98rem;
+  line-height: 1.85;
+}
+
+.guide-page .vp-doc .guide-article {
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid var(--site-card-border);
+  border-radius: 18px;
+  background: var(--site-card-bg);
+  box-shadow: var(--site-card-shadow);
+}
+
+.guide-page .vp-doc h1 {
+  margin: 2.6rem 0 1.35rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-1);
+  font-size: clamp(1.85rem, 4vw, 2.5rem);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.guide-page .vp-doc h2 {
+  margin: 3.75rem 0 1.2rem;
+  padding: 0 0 0 14px;
+  border: 0;
+  border-left: 4px solid var(--vp-c-brand-1);
+  color: var(--vp-c-text-1);
+  font-size: clamp(1.35rem, 2.8vw, 1.7rem);
+  line-height: 1.35;
+}
+
+.guide-page .vp-doc h3 {
+  margin: 2.25rem 0 0.8rem;
+  color: var(--vp-c-text-1);
+  font-size: 1.12rem;
+  line-height: 1.55;
+}
+
+.guide-page .vp-doc h1 + h2,
+.guide-page .vp-doc h2:first-of-type {
+  margin-top: 2.2rem;
+}
+
+.guide-page .vp-doc p,
+.guide-page .vp-doc li {
+  overflow-wrap: anywhere;
+}
+
+.guide-page .vp-doc p {
+  margin: 0.9rem 0;
+}
+
+.guide-page .vp-doc ul,
+.guide-page .vp-doc ol {
+  margin: 0.9rem 0;
+  padding-left: 1.45rem;
+}
+
+.guide-page .vp-doc li + li {
+  margin-top: 0.35rem;
+}
+
+.guide-page .vp-doc blockquote {
+  margin: 1.4rem 0;
+  padding: 0.9rem 1.1rem;
+  border-radius: 0 10px 10px 0;
+  background: var(--vp-c-bg-soft);
+}
+
+.guide-page .vp-doc hr {
+  margin: 2.6rem 0;
+}
+
+.guide-page .guide-article > hr:first-of-type + p {
+  margin: 1.6rem 0 0;
+  padding: 1rem 1.2rem 0.25rem;
+  border: 1px solid var(--site-card-border);
+  border-bottom: 0;
+  border-radius: 12px 12px 0 0;
+  background: var(--vp-c-bg-soft);
+}
+
+.guide-page .guide-article > hr:first-of-type + p strong {
+  color: var(--vp-c-text-1);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.guide-page .guide-article > hr:first-of-type + p + ul {
+  max-height: min(440px, 60vh);
+  margin: 0 0 2.2rem;
+  padding: 0.25rem 1.2rem 1.15rem 2.65rem;
+  overflow: auto;
+  border: 1px solid var(--site-card-border);
+  border-top: 0;
+  border-radius: 0 0 12px 12px;
+  background: var(--vp-c-bg-soft);
+  scrollbar-color: var(--vp-c-divider) transparent;
+}
+
+.guide-page .guide-article > hr:first-of-type + p + ul {
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.guide-page .guide-article > hr:first-of-type + p + ul li + li {
+  margin-top: 0.12rem;
+}
+
+.guide-page .guide-article > hr:first-of-type + p + ul a {
+  color: var(--vp-c-text-2);
+  text-decoration: none;
+}
+
+.guide-page .guide-article > hr:first-of-type + p + ul a:hover {
+  color: var(--vp-c-brand-1);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.guide-attribution {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-top: 3.6rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-2);
+  font-size: 0.9rem;
+}
+
+.guide-attribution p {
+  margin: 0 !important;
+}
+
+.guide-attribution p:last-child {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: baseline;
+}
+
+.guide-attribution span {
+  color: var(--vp-c-text-3);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 640px) {
+  .guide-page .VPDoc {
+    padding: 24px 16px 52px;
+  }
+
+  .guide-page .vp-doc .guide-article {
+    padding: 22px 18px;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+  }
+
+  .guide-page .vp-doc {
+    font-size: 0.96rem;
+    line-height: 1.8;
+  }
+
+  .guide-page .vp-doc h2 {
+    margin-top: 3rem;
+  }
+
+  .guide-page .guide-article > hr:first-of-type + p,
+  .guide-page .guide-article > hr:first-of-type + p + ul {
+    margin-right: -2px;
+    margin-left: -2px;
+  }
+}
