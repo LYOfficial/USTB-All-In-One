@@ -158,6 +158,7 @@ aside: false
 <SiteSection subtitle="共 13 个">
 <SiteCard title="memora" url="https://github.com/USTB-806/memora" desc="USTB 806 实验室项目" />
 <SiteCard title="Source-of-USTB" url="https://github.com/Source-of-USTB" desc="学习/项目仓库组" />
+<SiteCard title="Komeiji-Bibliotheca" url="https://draaaft.github.io/Komeiji-Bibliotheca/" desc="数理论坛" icon="/img/Komeiji.png"/>
 <template #outdated>
 <SiteCard title="USTB-Dude" url="https://github.com/dashjay/USTB-Dude" desc="What's up dude?" badge="OUTDATED" />
 <SiteCard title="USTB-Welcome" url="https://github.com/Vincent-Leon/USTB-Welcome" desc="iBeiKe 团队新生手册" badge="OUTDATED" />
